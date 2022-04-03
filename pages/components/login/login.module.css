@@ -1,0 +1,56 @@
+/* Propriedades do Fieldset com classe .form */
+.form {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 30vw;
+    max-width: 50vw;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .5);
+    padding: 35px 30px;
+    border-radius: 12px;
+}
+
+/* Título 'Vamos Fazer Login?' */
+.login {
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem;
+    color: var(--fg-white);
+}
+
+.formInput {
+    min-height: calc(7vh + 10px);
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.3rem;
+}
+.formInput::placeholder {
+    text-align: center;
+}
+.formInput[type="button"] {
+    background-color: var(--blue2);
+    color: var(--fg-white);
+    min-height: 10vh;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.formInput[type="button"]:hover {
+    color: var(--blue2);
+    background-color: var(--fg-white);
+    box-shadow: 0px 0px 25px var(--fg-white);
+}
+.criarConta {
+    text-align: center;
+    color: var(--fg-white);
+    display: block;
+    margin: 10px auto 0px;
+}
+
