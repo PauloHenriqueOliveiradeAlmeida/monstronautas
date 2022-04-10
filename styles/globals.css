@@ -1,3 +1,20 @@
+:root {
+  /* Cores */
+  --blue1: #4B08AD;
+  --blue2: #4B08AD;
+  --blue3: #9DA7FF;
+  --green1: #1BFF31;
+  --pink1: #FF0099;
+  --fg-white: #e9e9e9;
+
+  /* Linear Gradients */
+  --blue-gradient: linear-gradient(173.89deg, var(--blue1) 3.66%, var(--blue2) 25.59%, var(--pink1) 103.6%);
+  --button-gradient: linear-gradient(96.61deg, var(--blue3) 19.77%, var(--green1) 133.57%);
+  --hover-white-gradient: linear-gradient(to right, var(--fg-white) 50%, transparent 50%);
+
+  --button-light: 0px 0px 25px var(--fg-white);
+}
+
 html,
 body {
   padding: 0;

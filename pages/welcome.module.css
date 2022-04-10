@@ -1,0 +1,79 @@
+.container {
+    background-image: var(--blue-gradient);
+    color: var(--fg-white);
+    height: 100vh;
+    text-align: center;
+    font-size: 5rem;
+    overflow-x: hidden;
+    position: relative;
+}
+.login {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    text-align: right;
+    padding: 10px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--fg-white) 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease;
+    font-weight: bold;
+}
+.login:hover {
+    background-position: left;
+    color: var(--blue2);
+    box-shadow: var(--button-light);
+    
+}
+.mascoteField {
+    margin: 0px;
+    padding: 0px;
+}
+.mascote {
+    animation: mascote_move 10s infinite alternate;
+    z-index: 1;
+}
+.text {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: -1.4%;
+}
+.button {
+    background-image: var(--button-gradient);
+    padding: 20px 120px;
+    font-size: 1.5rem;
+    border-radius: 32px;
+    transition: all .5s ease-in-out;
+}
+.button:hover {
+    background-image: none;
+    background-color: var(--fg-white);
+    box-shadow: var(--button-light);
+    color: var(--blue2);
+}
+/* Animação que faz o mascote balançar */
+@keyframes mascote_move {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+@media (min-width: 801px) {
+    .container {
+        padding: 30px;
+    }
+    .mascoteField{
+        width: 800px;
+        position: absolute;
+        right: 20px;
+        top: 100px;
+        z-index: 1;
+    }
+    .mainText {
+        margin-top: 50vh;
+    }
+}

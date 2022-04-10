@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: var(--blue-gradient);
+}
+/* Propriedades do Fieldset com classe .form */
+.form {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80vw;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .5);
+    padding: 35px 30px;
+    border-radius: 12px;
+}
+
+/* Título 'Vamos Fazer Login?' */
+.login {
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem;
+    color: var(--fg-white);
+}
+
+.formInput {
+    min-height: calc(7vh + 10px);
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.3rem;
+}
+.formInput::placeholder {
+    text-align: center;
+}
+.formInput[type="button"] {
+    background-color: var(--blue2);
+    color: var(--fg-white);
+    min-height: 10vh;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.formInput[type="button"]:hover {
+    color: var(--blue2);
+    background-image: none;
+    background-color: var(--fg-white);
+    box-shadow: 0px 0px 25px var(--fg-white);
+}
+.criarConta {
+    text-align: center;
+    color: var(--fg-white);
+    display: block;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+    padding: 10px 70px;
+    border-radius: 32px;
+}
+.criarConta:hover {
+    background-color: #ffffff80;
+    font-weight: bold;
+    color: #221d38;
+}
+
+@media (min-width: 801px) {
+    .form {
+        width: 40vw;
+    }
+}
