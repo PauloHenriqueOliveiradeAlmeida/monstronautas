@@ -66,4 +66,4 @@ function NewAccount() {
         </div>
     )
 }
-export default newAccount;
+export default NewAccount;
