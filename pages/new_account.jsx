@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 import styles from "./new_account.module.css"
-function newAccount() {
+function NewAccount() {
     const [password, setPassword] = useState("");
     const [card, setCard] = useState();
 
