@@ -1,7 +1,7 @@
 .container {
   display: block;
-  height: 100vh;
   width: 100%;
+  height: 100%;
   margin: auto;
   background-image: var(--green-gradient);
   position: relative;
