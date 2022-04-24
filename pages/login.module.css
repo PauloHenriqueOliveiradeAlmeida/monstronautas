@@ -1,11 +1,19 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: var(--blue-gradient);
+}
 /* Propriedades do Fieldset com classe .form */
 .form {
     border: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    min-width: 30vw;
-    max-width: 50vw;
+    width: 80vw;
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, .5);
@@ -44,6 +52,7 @@
 }
 .formInput[type="button"]:hover {
     color: var(--blue2);
+    background-image: none;
     background-color: var(--fg-white);
     box-shadow: 0px 0px 25px var(--fg-white);
 }
@@ -51,6 +60,19 @@
     text-align: center;
     color: var(--fg-white);
     display: block;
-    margin: 10px auto 0px;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+    padding: 10px 70px;
+    border-radius: 32px;
+}
+.criarConta:hover {
+    background-color: #ffffff80;
+    font-weight: bold;
+    color: #221d38;
 }
 
+@media (min-width: 801px) {
+    .form {
+        width: 40vw;
+    }
+}

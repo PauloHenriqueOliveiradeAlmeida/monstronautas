@@ -1,0 +1,46 @@
+.cardWindow {
+    top: 0px;
+    background-color: #000000b7;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+}
+.card {
+    background-color: #fff;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 32px;
+}
+.card h2 {
+    color: #202020 !important;
+}
+.close {
+    align-self: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+}
+.card button {
+    width: 100%;
+    height: 60px;
+    background-color: var(--blue2);
+    border: 1px solid var(--blue2);
+    color: var(--fg-white);
+    font-size: 20px;
+    border-radius: 32px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.card button:hover {
+    background-image: none;
+    background-color: var(--fg-white);
+    box-shadow: var(--button-light);
+    color: var(--blue2);
+}

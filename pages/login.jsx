@@ -14,8 +14,8 @@ function Login() {
     }
     }
     return (
-        <form action="pages/conexao" className={styles.container}>
-            <h2 className={styles.login}>Vamos Fazer Login</h2>
+        <form action="" className={styles.container}>
+            <h2 className={styles.login}>Olá, Vamos começar a Aprender!</h2>
             <fieldset className={styles.form}>
                 <input className={styles.formInput} type="email" name="email" placeholder="Email da Mamãe" onChange={handleChangeValues}/>
                 <input className={styles.formInput} type="password" name="senha" placeholder="Senha da Mamãe" onChange={handleChangeValues}/>

@@ -1,0 +1,118 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-image: url("/background.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.container h2 {
+    color: var(--fg-white);
+}
+.form {
+    background-color: var(--fg-white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    border-radius: 32px;
+    font-size: 1.3rem;
+    gap: 20px;
+}
+.input {
+    margin-bottom: 40px;
+}
+.hr {
+    margin: 30px auto;
+    border: none;
+    border-radius: 32px;
+    width: 80%;
+    height: 7px;
+    background-color: var(--blue1);
+}
+.form input {
+    height: 40px;
+    outline: none;
+    border-radius: 32px;
+    border: 1px solid var(--blue2);
+    padding: 10px;
+    font-size: 100%;
+    color: var(--blue2);
+}
+.form input:focus {
+    border-color: var(--pink1);
+}
+.form input[type="radio"] {
+    appearance: none;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    border: none;
+    box-shadow: inset 0px 0px 0px 1px var(--blue2);
+    transition: all .2s linear;
+}
+.form input[type="radio"]:checked {
+    box-shadow: inset 0px 0px 0px 7px var(--pink1);
+}
+.echoPassword {
+    border: 1px solid var(--blue2);
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 32px;
+    background-color: #ffffff;
+}
+.password {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.del {
+    font-size: 40px;
+    border-radius: 32px;
+    padding: 20px;
+    background-color: var(--blue2);
+    color: var(--fg-white);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.del:hover {
+    background-color: var(--blue3);
+}
+.del:active {
+    border-radius: 50px;
+    background-image: var(--button-gradient);
+}
+.passwordIcons {
+    font-size: 50px;
+}
+.submit {
+    background-color: var(--pink1);
+    border: none;
+    color: var(--fg-white);
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 32px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.submit:hover {
+    background-color: var(--fg-white);
+    color: var(--pink1);
+    border: 1px solid var(--pink1);
+}
+.submit:active {
+    background-image: var(--button-gradient);
+    color: var(--fg-white);
+    border: none;
+}
+@media (min-width: 801px) {
+    .container {
+        padding: 80px;
+    }
+}
