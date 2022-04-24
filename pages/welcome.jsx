@@ -1,4 +1,4 @@
-import Typewriter from 'typewriter-effect';
+import Typewriter from "typewriter-effect";
 import Link from "next/link";
 import styles from "./welcome.module.css"
 import Image from "next/image";

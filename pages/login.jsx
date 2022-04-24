@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styles from "./login.module.css"
+import axios from "axios";
 function Login() {
 
     const [values, setValues] = useState();
@@ -10,7 +11,7 @@ function Login() {
             [value.target.name]: value.target.value,
         }));
     const clickbutton = () =>{
-        console.log(values);
+        axios.post("/api/connection")
     }
     }
     return (
