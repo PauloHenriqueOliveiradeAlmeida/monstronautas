@@ -39,7 +39,7 @@ function NewAccount() {
     function submit(event) {
         event.preventDefault();
         if (password.length > 0) {
-            axios.post("/api/connection", {name: name, type: type, email: email, password: password});
+            axios.post("/api/connection", {name: name, type: type, email: email, password: password}).then();
         }
         else {
             setCard(<Card title="Opa! Você esqueceu algo..." body="Parece que você não digitou nenhuma senha, por favor, para sua segurança digite uma senha de até 6 animaizinhos" button="OK" />)

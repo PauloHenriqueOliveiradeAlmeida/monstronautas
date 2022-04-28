@@ -1,4 +1,4 @@
-import Typewriter from "typewriter-effect";
+
 import Link from "next/link";
 import styles from "./welcome.module.css"
 import Image from "next/image";
@@ -16,13 +16,7 @@ function Welcome() {
                     <p className={styles.text}>Vamos viajar pelo espaço e...</p>
 
                     {/* A Tag Typewriter Produz efeito de escrita */}
-                    <Typewriter options={{
-                        strings: [
-                            "APRENDER", "BRINCAR", "ESTUDAR", "DIVERTIR" //Em strings coloca tudo que é para escrever
-                        ],
-                        autoStart: true, //controla se ja vai comecar a escrever
-                        loop: true // controla se vai ficar sempre executando
-                    }} className={styles.typewriter}/>
+                 className={styles.typewriter}/>
                     <Link href="/new_account" className={styles.button}>
                         <a className={styles.button}>Começar</a>
                     </Link>

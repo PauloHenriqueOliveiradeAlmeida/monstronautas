@@ -1,4 +1,4 @@
-
+import connection from "../pages/api/connection";
 const express = require("express");
 const app = express();
 const mariadb = require("mariadb");
@@ -16,7 +16,7 @@ const banco = mariadb.createPool({
 app.use(cors());
 app.use(express.json());
 
-app.post("/api/connection", (req, res)=>{
+app.post("", (req, res)=>{
     const {name}=req.body;
     const {type}=req.body;
     const {email}=req.body;
@@ -43,7 +43,7 @@ app.post("/api/connection", (req, res)=>{
 
 
 
-app.post("/api/connection", (req, res)=>{
+app.post("", (req, res)=>{
     const {name}=req.body;
     const {type}=req.body;
     const {email}=req.body;
@@ -54,9 +54,9 @@ app.post("/api/connection", (req, res)=>{
             res.send(err);
         }
         if(result > 0){
-            res.send({msg:"Usuario logado"})
+            res.send({msg:"Usuario logado"});
         }else{
-            res.send({msg:"Usuario não encontrado"})
+            res.send({msg:"Usuario não encontrado"});
         }
     });
 });
