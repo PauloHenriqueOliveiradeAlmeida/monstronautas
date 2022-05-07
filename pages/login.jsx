@@ -4,7 +4,6 @@ import axios from "axios";
 function Login() {
 
     const [values, setValues] = useState();
-    console.log(values)
     const handleChangeValues = value =>{
         setValues((prevValue) => ({
             ...prevValue,

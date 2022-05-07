@@ -4,9 +4,10 @@ import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@f
 import { useState } from 'react';
 import styles from "./new_account.module.css";
 import axios from "axios";
+import { useRouter } from "next/router"
 function NewAccount() {
     const [password, setPassword] = useState("");
-
+    const router = useRouter();
     const [name, setName] = useState("");
     const [type, setType] = useState("p");
     const [email, setEmail] = useState("");
@@ -36,11 +37,22 @@ function NewAccount() {
     }
 
     // Função de envio de informações para o Backend
-    function submit(event) {
+    async function submit(event) {
         event.preventDefault();
         if (password.length > 0) {
-            axios.post("/api/connection", {name: name, type: type, email: email, password: password}).then();
-        }
+            // axios.post("/api/new_account", {name: name, type: type, email: email, password: password});
+            const req = await fetch("/api/new_account", {
+              method: "POST",
+              body: JSON.stringify({name: name, type: type, email: email, password: password}),
+              headers: {
+                "Content-Type": "application/json"
+              }
+            });
+            const res = await req.json();
+            if (res.create === true) {
+              router.push("/login");
+            }
+          }
         else {
             setCard(<Card title="Opa! Você esqueceu algo..." body="Parece que você não digitou nenhuma senha, por favor, para sua segurança digite uma senha de até 6 animaizinhos" button="OK" />)
         }
@@ -55,7 +67,7 @@ function NewAccount() {
 
                 <label htmlFor="tipo">Você é</label>
                 <div>
-                    <input type="radio" name="tipo" id="prof" onClick={() => {setType("p")}} checked/><label htmlFor="prof">Professor</label><br />
+                    <input type="radio" name="tipo" id="prof" onClick={() => {setType("p")}} defaultChecked/><label htmlFor="prof">Professor</label><br />
                     <input type="radio" name="tipo" id="resp" onClick={() => {setType("r")}}/><label htmlFor="resp">Responsável</label>
                 </div>
                 <hr className={styles.hr} />
