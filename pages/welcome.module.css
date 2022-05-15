@@ -1,5 +1,4 @@
 .container {
-    background-image: var(--blue-gradient);
     color: var(--fg-white);
     height: 100vh;
     text-align: center;

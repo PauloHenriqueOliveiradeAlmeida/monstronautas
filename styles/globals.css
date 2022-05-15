@@ -28,6 +28,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: 100vh;
   letter-spacing: 5px;
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-clip: padding-box;
 }
 
 a {

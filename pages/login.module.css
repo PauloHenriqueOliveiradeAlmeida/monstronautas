@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: var(--blue-gradient);
 }
 /* Propriedades do Fieldset com classe .form */
 .form {

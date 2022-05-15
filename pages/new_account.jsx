@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 import styles from "./new_account.module.css";
-import axios from "axios";
 import { useRouter } from "next/router"
 function NewAccount() {
     const [password, setPassword] = useState("");
@@ -50,7 +49,14 @@ function NewAccount() {
             });
             const res = await req.json();
             if (res.create === true) {
-              router.push("/login");
+              router.push("/alunos");
+            }
+            else {
+                setCard(
+                    <Card 
+                    title="Ocorreu um Erro..." 
+                    body="Infelizmente não foi possível realizar seu Cadastro, verifique as informações e tente novamente mais tarde" button="OK" />
+                );
             }
           }
         else {

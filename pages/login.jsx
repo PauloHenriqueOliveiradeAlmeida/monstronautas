@@ -1,27 +1,17 @@
-import React, { useState } from "react"
+import Link from "next/link"
 import styles from "./login.module.css"
-import axios from "axios";
 function Login() {
-
-    const [values, setValues] = useState();
-    const handleChangeValues = value =>{
-        setValues((prevValue) => ({
-            ...prevValue,
-            [value.target.name]: value.target.value,
-        }));
-    const clickbutton = () =>{
-        axios.post("/api/connection")
-    }
-    }
     return (
         <form action="" className={styles.container}>
             <h2 className={styles.login}>Olá, Vamos começar a Aprender!</h2>
             <fieldset className={styles.form}>
-                <input className={styles.formInput} type="email" name="email" placeholder="Email da Mamãe" onChange={handleChangeValues}/>
-                <input className={styles.formInput} type="password" name="senha" placeholder="Senha da Mamãe" onChange={handleChangeValues}/>
-                <input className={styles.formInput} type="button" name="botao" value="Entrar" onClick = {() => clickbutton()}/>
+                <input className={styles.formInput} type="email" name="email" placeholder="Email da Mamãe"/>
+                <input className={styles.formInput} type="password" name="senha" placeholder="Senha da Mamãe"/>
+                <input className={styles.formInput} type="button" name="botao" value="Entrar"/>
             </fieldset>
-            <a href="http://" target="_blank" rel="noopener noreferrer" className={styles.criarConta}>Não tem conta? crie aqui</a>
+            <Link href="/new_account">
+                <a className={styles.criarConta}>Não tem conta? crie aqui</a>
+            </Link>
         </form>
     )
 }
