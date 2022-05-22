@@ -1,6 +1,6 @@
-import { useCookies } from "react-cookie";
+import { getCookie } from "cookies-next";
+export default function Auth(request, response) {
+    const auth = getCookie("auth", {request, response});
 
-function Auth(redirect) {
-    
+    return response.json({funfou: auth})
 }
-export default Auth;

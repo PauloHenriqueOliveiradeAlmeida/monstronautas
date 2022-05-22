@@ -2,15 +2,13 @@ import Card from './components/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
+import { useForm } from "react-hook-form"
 import styles from "./new_account.module.css";
 import { useRouter } from "next/router"
 function NewAccount() {
     const [password, setPassword] = useState("");
+    const { register, handleSubmit } = useForm();
     const router = useRouter();
-    const [name, setName] = useState("");
-    const [type, setType] = useState("p");
-    const [email, setEmail] = useState("");
-
     const [card, setCard] = useState();
 
     // Função responsável por verificar o tamanho da senha e, se menor que 6 adicionar um novo animal
@@ -36,25 +34,23 @@ function NewAccount() {
     }
 
     // Função de envio de informações para o Backend
-    async function submit(event) {
-        event.preventDefault();
+    async function submit(data) {
         if (password.length > 0) {
-            // axios.post("/api/new_account", {name: name, type: type, email: email, password: password});
             const req = await fetch("/api/new_account", {
               method: "POST",
-              body: JSON.stringify({name: name, type: type, email: email, password: password}),
+              body: JSON.stringify({name: data.name, email: data.email, password: password}),
               headers: {
                 "Content-Type": "application/json"
               }
             });
             const res = await req.json();
             if (res.create === true) {
-              router.push("/alunos");
+                router.push("/alunos");
             }
             else {
                 setCard(
-                    <Card 
-                    title="Ocorreu um Erro..." 
+                    <Card
+                    title="Ocorreu um Erro..."
                     body="Infelizmente não foi possível realizar seu Cadastro, verifique as informações e tente novamente mais tarde" button="OK" />
                 );
             }
@@ -67,18 +63,13 @@ function NewAccount() {
         <div className={styles.container}>
             {card}
             <h2>Olá, Vamos Começar!</h2>
-            <form className={styles.form}  onSubmit={(e) => {submit(e)}}>
+            <form className={styles.form}  onSubmit={handleSubmit(submit)}>
                 <label htmlFor="nome">Gostaríamos de saber seu Nome</label>
-                <input type="text" max="50" min="1" name="name" value={name} onChange={(e) => {setName(e.target.value)}} className={styles.input} required/>
+                <input type="text" max="50" min="1" name="name" {...register("name")} className={styles.input} required/>
 
-                <label htmlFor="tipo">Você é</label>
-                <div>
-                    <input type="radio" name="tipo" id="prof" onClick={() => {setType("p")}} defaultChecked/><label htmlFor="prof">Professor</label><br />
-                    <input type="radio" name="tipo" id="resp" onClick={() => {setType("r")}}/><label htmlFor="resp">Responsável</label>
-                </div>
                 <hr className={styles.hr} />
                 <label htmlFor="email">Informe o Email</label>
-                <input type="email" name="email" id="email" value={email} onChange={(e) => {setEmail(e.target.value)}} className={styles.input} required/>
+                <input type="email" name="email" id="email" {...register("email")} className={styles.input} required/>
 
                 <label htmlFor="">Agora, uma senha BEM Divertida</label>
                 <div className={styles.echoPassword}>
