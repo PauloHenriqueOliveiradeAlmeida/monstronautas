@@ -3,14 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState, useContext } from 'react';
 import { AuthContext } from '../contexts/context';
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import styles from "./new_account.module.css";
 import { useRouter } from "next/router"
 function NewAccount() {
     const [password, setPassword] = useState("");
     const { register, handleSubmit } = useForm();
     const router = useRouter();
-    const { signIn } = useContext(AuthContext);
     const [card, setCard] = useState();
 
     // Função responsável por verificar o tamanho da senha e, se menor que 6 adicionar um novo animal

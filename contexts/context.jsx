@@ -3,23 +3,27 @@ import Router from "next/router"
 import { setCookie } from "nookies";
 export const  AuthContext = createContext({});
 
-export function AuthProvider({children}) {
+export function AuthProvider(props) {
     const [user, setUser] = useState(null);
     const auth = !!user;
 
     async function signIn({email, password}) {
-        //const { token, user_email } = await Connection(`SELECT * FROM responsavel where email_responsavel=${email} and senha_responsavel=${password}`);
-        // setCookie(undefined, "token", token, {
-        //     maxAge: 60 * 60 * 24, //expira em um dia
-        //     path: "/",
-        //     httpOnly: true
-        // // });
-        // // setUser(user_email);
-        // Router.push("/alunos");
+        const {rows, token} = await fetch("/api/login", {
+            method: "POST",
+            body: JSON.stringify({email: email, password: password}),
+            headers: {
+              "Content-Type": "application/json"
+            }
+        });
+        setCookie(undefined, "nextauth.token", token, {
+            maxAge: 60 * 60 * 24,
+            path: "/"
+        });
+        Router.push("/");
     }
     return (
         <AuthContext.Provider value={{user, auth, signIn}}>
-        {children}
+            {props.children}
         </AuthContext.Provider>
     );
 }
