@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 import styles from "./new_account.module.css"
+import Link from 'next/link';
 function NewAccount() {
     const [password, setPassword] = useState("");
     const [card, setCard] = useState();
@@ -34,16 +35,16 @@ function NewAccount() {
             <h2>Olá, Vamos Começar!</h2>
             <form className={styles.form}>
                 <label htmlFor="nome">Gostaríamos de saber seu Nome</label>
-                <input type="text" max="50" min="1" className={styles.input} required/>
+                <input type="text" max="50" min="1" className={styles.input} required />
 
                 <label htmlFor="tipo">Você é</label>
                 <div>
-                    <input type="radio" name="tipo" id="" checked/><label htmlFor="">Professor</label><br />
+                    <input type="radio" name="tipo" id="" checked /><label htmlFor="">Professor</label><br />
                     <input type="radio" name="tipo" id="" /><label htmlFor="">Responsável</label>
                 </div>
                 <hr className={styles.hr} />
                 <label htmlFor="email">Informe o Email</label>
-                <input type="email" name="" id="email" className={styles.input} required/>
+                <input type="email" name="" id="email" className={styles.input} required />
 
                 <label htmlFor="">Agora, uma senha BEM Divertida</label>
                 <div className={styles.echoPassword}>
@@ -59,11 +60,13 @@ function NewAccount() {
                         <FontAwesomeIcon icon={faOtter} onClick={() => { addCharinPassword("Lontra") }} />
                         <FontAwesomeIcon icon={faCrow} onClick={() => { addCharinPassword("Urubu") }} />
                     </div>
-                    <FontAwesomeIcon icon={faDeleteLeft} onClick={() => { removeCharinPassword() }} className={styles.del}/>
+                    <FontAwesomeIcon icon={faDeleteLeft} onClick={() => { removeCharinPassword() }} className={styles.del} />
                 </div>
-                <button className={styles.submit}>Partir para a Aventura!</button>
+                <Link href="/dashboard">
+                    <button className={styles.submit}>Partir para a Aventura</button>
+                </Link>
             </form>
-        </div>
+        </div >
     )
 }
 export default NewAccount;
