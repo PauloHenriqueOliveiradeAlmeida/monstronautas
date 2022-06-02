@@ -8,8 +8,6 @@ function Login() {
     const { signIn } = useContext(AuthContext);
     async function sign(data) {
         const req = await signIn(data);
-        const res = req.json();
-        console.log(res);
     }
     return (
         <form className={styles.container} onSubmit={handleSubmit(sign)}>

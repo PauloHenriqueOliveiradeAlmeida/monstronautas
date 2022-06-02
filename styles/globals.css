@@ -31,6 +31,8 @@ body {
   background-image: url("/background.jpg");
   background-size: cover;
   background-clip: padding-box;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
 }
 
 a {
