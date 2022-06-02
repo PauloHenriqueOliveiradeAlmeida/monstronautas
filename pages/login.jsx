@@ -1,17 +1,25 @@
+import Link from "next/link"
 import styles from "./login.module.css"
-import Link from "next/link";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../contexts/context";
 function Login() {
+    const {register, handleSubmit} = useForm();
+    const { signIn } = useContext(AuthContext);
+    async function sign(data) {
+        const req = await signIn(data);
+    }
     return (
-        <form action="" className={styles.container}>
+        <form className={styles.container} onSubmit={handleSubmit(sign)}>
             <h2 className={styles.login}>Olá, Vamos começar a Aprender!</h2>
             <fieldset className={styles.form}>
-                <input className={styles.formInput} type="email" placeholder="Email da Mamãe" />
-                <input className={styles.formInput} type="password" placeholder="Senha da Mamãe" />
-                <Link href="/dashboard">
-                    <input className={styles.formInput} type="button" value="Entrar" />
-                </Link>
+                <input className={styles.formInput} type="email" name="email" placeholder="Email da Mamãe" {...register("email")}/>
+                <input className={styles.formInput} type="password" name="senha" placeholder="Senha da Mamãe" {...register("password")}/>
+                <button className={styles.formInput}>Entrar</button>
             </fieldset>
-            <a href="" target="_blank" rel="noopener noreferrer" className={styles.criarConta}>Não tem conta? crie aqui</a>
+            <Link href="/new_account">
+                <a className={styles.criarConta}>Não tem conta? crie aqui</a>
+            </Link>
         </form>
     )
 }

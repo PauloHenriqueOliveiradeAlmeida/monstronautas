@@ -15,13 +15,24 @@
   --button-light: 0px 0px 25px var(--fg-white);
 }
 
+@font-face {
+  font-family: "Londrina Solid Regular";
+  src: url("/fonts/LondrinaSolid-Regular.otf");
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: "Londrina Solid Regular", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: 100vh;
+  letter-spacing: 5px;
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-clip: padding-box;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
 }
 
 a {
