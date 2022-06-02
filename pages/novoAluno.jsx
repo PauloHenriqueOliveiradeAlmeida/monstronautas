@@ -1,3 +1,4 @@
+import Card from "./components/card"
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./new_account.module.css"
@@ -29,7 +30,6 @@ function NovoAluno() {
             );
         }
       }
-    }
     return (
         <div className={styles.container}>
             <h2>Vamos Começar</h2>
@@ -50,4 +50,5 @@ function NovoAluno() {
         </div>
     );
 }
+    
 export default NovoAluno;
