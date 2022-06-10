@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./new_account.module.css"
+import Card from "./components/card"
 function NovoAluno() {
     const router = useRouter();
     const [name, setName] = useState("");
@@ -29,7 +30,6 @@ function NovoAluno() {
             );
         }
       }
-    }
     return (
         <div className={styles.container}>
             <h2>Vamos Começar</h2>
