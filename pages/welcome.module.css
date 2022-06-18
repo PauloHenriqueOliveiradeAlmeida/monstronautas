@@ -26,8 +26,9 @@
     
 }
 .mascoteField {
-    margin: 0px;
-    width: 100%;
+    margin: 100px auto 0px auto;
+    min-width: 120px;
+    max-width: 300px;
     padding: 0px;
 }
 .mascoteField img {
@@ -71,10 +72,10 @@
         font-size: 10rem;
     }
     .mascoteField {
+        margin: 0px;
         width: 50%;
         position: absolute;
-        right: 0px;
-        top: 100px;
+        left: 80px;
         z-index: 1;
     }
     .mainText {

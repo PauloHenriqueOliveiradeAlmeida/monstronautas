@@ -1,10 +1,11 @@
-import { useState, useContext } from 'react';
-import { AuthContext } from '../contexts/context';
 import { useForm } from "react-hook-form";
 import styles from "./new_account.module.css";
 import { useRouter } from "next/router"
-import Password from "./components/password"
+import { useState } from "react";
+import Password from "./components/password";
+import Card from './components/card';
 function NewAccount() {
+    const [password, setPassword] = useState();
     const { register, handleSubmit } = useForm();
     const router = useRouter();
 
@@ -36,7 +37,7 @@ function NewAccount() {
                 <input type="email" name="email" id="email" {...register("email")} className={styles.input} required/>
 
                 <label htmlFor="">Agora, uma senha BEM Divertida</label>
-                <Password/>
+                <Password set={setPassword}/>
                 <button className={styles.submit}>Partir para a Aventura!</button>
             </form>
         </div>
