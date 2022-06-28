@@ -1,9 +1,7 @@
 import Connection from "./connection";
-import nookies from "nookies";
-import { v4 as uuid } from "uuid";
-export default async function (request, response) {
+export default async function NewAccount(request) {
     const req = request.body;
-    const con = await Connection("INSERT INTO responsavel (nome_responsavel, email_responsavel, senha_responsavel) values (?, ?, ?)", [
+    const con = await Connection("INSERT INTO tb_responsavel (nome_responsavel, email_responsavel, senha_responsavel) values (?, ?, ?)", [
         req.name,
         req.email,
         req.password

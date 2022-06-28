@@ -1,44 +1,32 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 import styles from "./new_account.module.css"
 import Card from "./components/card"
 function NovoAluno() {
     const router = useRouter();
-    const [name, setName] = useState("");
-    const [idade, setIdade] = useState();
-    const [sexo, setSexo] = useState("p");
+    const [sexo, setSexo] = useState("f");
+    const { register, handleSubmit } = useForm();
 
     // Função de envio de informações para o Backend
-    async function submit(event) {
-        event.preventDefault();
+    async function submit(data) {
         const req = await fetch("/api/new_aluno", {
           method: "POST",
-          body: JSON.stringify({name: name, idade: idade, sexo: sexo}),
+          body: JSON.stringify({name: data.name, idade: data.idade, sexo: sexo}),
           headers: {
             "Content-Type": "application/json"
           }
         });
-        const res = await req.json();
-        if (res.create === true) {
-          router.push("/alunos");
-        }
-        else {
-            setCard(
-                <Card 
-                title="Ocorreu um Erro..." 
-                body="Infelizmente não foi possível realizar seu Cadastro, verifique as informações e tente novamente mais tarde" button="OK" />
-            );
-        }
       }
     return (
         <div className={styles.container}>
             <h2>Vamos Começar</h2>
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={handleSubmit(submit)}>
                 <label htmlFor="">Nome:</label>
-                <input type="text" className={styles.input} value={name} onChange={(e) => {setName(e.target.value)}} required/>
+                <input type="text" className={styles.input} {...register("name")} required/>
 
                 <label htmlFor="">Idade:</label>
-                <input type="number" className={styles.input} min="1" max="18" value={idade} onChange={(e) => {setIdade(e.target.value)}} required/>
+                <input type="number" className={styles.input} min="1" max="18" {...register("idade")} required/>
 
                 <label htmlFor="">Aluno é:</label>
                 <div>
@@ -50,4 +38,5 @@ function NovoAluno() {
         </div>
     );
 }
+
 export default NovoAluno;
