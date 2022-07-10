@@ -7,8 +7,7 @@ export default async function Login(request, response) {
     const values = con[0];
     if (values.length != 0) {
         return response.status(200).json({
-            id: values.id_responsavel,
-            token: jsonwebtoken.sign({id: values.id_responsavel}, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24})
+            token: jsonwebtoken.sign({id: values.id_responsavel}, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
         });
     }
 }

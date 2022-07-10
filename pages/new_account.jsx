@@ -20,6 +20,18 @@ function NewAccount() {
                 "Content-Type": "application/json"
               }
             });
+            try {
+                const res = await req.json();
+                if (res.createAccount == true) {
+                    router.push("/alunos");
+                }
+                else {
+                    alert("Falha ao criar perfil, estamos trabalhando para corrigir isso");
+                }
+            }
+            catch {
+                alert("Falha ao criar perfil, estamos trabalhando para corrigir isso");
+            }
           }
         else {
             setCard(<Card title="Opa! Você esqueceu algo..." body="Parece que você não digitou nenhuma senha, por favor, para sua segurança digite uma senha de até 6 animaizinhos" button="OK" />)
