@@ -6,6 +6,10 @@
     align-items: center;
     flex-direction: column;
 }
+.container label {
+    margin-top: 40px;
+    font-size: 24px;
+}
 /* Propriedades do Fieldset com classe .form */
 .form {
     border: none;
@@ -40,7 +44,7 @@
 .formInput::placeholder {
     text-align: center;
 }
-.formInput[type="button"] {
+.container button {
     background-color: var(--blue2);
     color: var(--fg-white);
     min-height: 10vh;
@@ -49,7 +53,7 @@
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
-.formInput[type="button"]:hover {
+.container button:hover {
     color: var(--blue2);
     background-image: none;
     background-color: var(--fg-white);

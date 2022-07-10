@@ -1,3 +1,4 @@
+
 .alunos h1{
     color: var(--fg-white);
     text-align: center;
@@ -23,4 +24,33 @@
     background-image: none;
     background-color: var(--fg-white);
     box-shadow: var(--button-light);
+}
+.infoAlunos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100%);
+    grid-auto-rows: 180px;
+    gap: 20px;
+    padding: 20px;
+}
+.alunosCard {
+    background-color: #e9e9e98f;
+    backdrop-filter: blur(7px);
+    border-radius: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.alunosCardName {
+    font-size: 24px;
+}
+.alunosCard p::first-letter {
+    text-transform: capitalize;
+}
+
+@media (min-width: 801px) {
+    .infoAlunos {
+        grid-template-columns: 5fr 5fr;
+    }
 }

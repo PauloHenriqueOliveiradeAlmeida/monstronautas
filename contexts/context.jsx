@@ -15,13 +15,19 @@ export function AuthProvider(props) {
               "Content-Type": "application/json"
             }
         });
-        const res= await req.json();
-        setCookie(undefined, "nextauth.token", res.token, {
-            maxAge: 60 * 60 * 24,
-            path: "/",
-            HttpOnly: true
-        });
-        Router.push("/alunos");
+        try {
+            const res = await req.json();
+            setCookie(undefined, "next_auth_token", res.token, {
+                maxAge: 60 * 60 * 24,
+                path: "/",
+                HttpOnly: true
+            });
+            Router.push("/alunos");
+        }
+        catch(e) {
+            window.alert("Usuário não encontrado")
+        }
+
     }
     return (
         <AuthContext.Provider value={{user, auth, signIn}}>

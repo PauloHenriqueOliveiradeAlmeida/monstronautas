@@ -1,12 +1,11 @@
 import Card from './components/card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import styles from "./new_account.module.css"
-import Link from 'next/link';
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router"
-import Password from "./components/password"
+import { useState } from "react";
+import Password from "./components/password";
 function NewAccount() {
+    const [password, setPassword] = useState();
     const { register, handleSubmit } = useForm();
     const router = useRouter();
 
@@ -21,6 +20,18 @@ function NewAccount() {
                 "Content-Type": "application/json"
               }
             });
+            try {
+                const res = await req.json();
+                if (res.createAccount == true) {
+                    router.push("/alunos");
+                }
+                else {
+                    alert("Falha ao criar perfil, estamos trabalhando para corrigir isso");
+                }
+            }
+            catch {
+                alert("Falha ao criar perfil, estamos trabalhando para corrigir isso");
+            }
           }
         else {
             setCard(<Card title="Opa! Você esqueceu algo..." body="Parece que você não digitou nenhuma senha, por favor, para sua segurança digite uma senha de até 6 animaizinhos" button="OK" />)
@@ -38,7 +49,7 @@ function NewAccount() {
                 <input type="email" name="email" id="email" {...register("email")} className={styles.input} required/>
 
                 <label htmlFor="">Agora, uma senha BEM Divertida</label>
-                <Password/>
+                <Password set={setPassword}/>
                 <button className={styles.submit}>Partir para a Aventura!</button>
             </form>
         </div >

@@ -1,13 +1,14 @@
 import Connection from "./connection";
-import mariadb from "mariadb";
-import { v4 as uuid } from "uuid";
+import jsonwebtoken from "jsonwebtoken";
 export default async function Login(request, response) {
     const req = request.body;
 
-    const con = await Connection("SELECT * FROM responsavel where email_responsavel=? and senha_responsavel=?", [req.email, req.password]);
+    const con = await Connection("SELECT * FROM tb_responsavel where email_responsavel=? and senha_responsavel=?", [req.email, req.password]);
     const values = con[0];
-    if (req.email === values.email_responsavel && req.password === values.senha_responsavel) {
-        return response.status(200).json({rows: con, token: uuid()});
+    if (values.length != 0) {
+        return response.status(200).json({
+            token: jsonwebtoken.sign({id: values.id_responsavel}, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
+        });
     }
     else {
         return response.json({token: null});

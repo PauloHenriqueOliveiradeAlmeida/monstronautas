@@ -7,15 +7,16 @@ import { faDog, faHippo, faFrog, faCat, faOtter, faCrow, faDeleteLeft } from "@f
 function Password(props) {
     const [password, setPassword] = useState("");
     const [card, setCard] = useState();
-    // Função responsável por verificar o tamanho da senha e, se menor que 6 adicionar um novo animal
+    // Função responsável   por verificar o tamanho da senha e, se menor que 6 adicionar um novo animal
     function addCharinPassword(char) {
-        let password_char_groups = password.split(/(\s+)/); // Pega a senha digitada e converte em um vetor separando por espaços, ex. "Lápis Quebrou" vira "Lápis", " ", "Quebrou"
+        let password_char_groups = password.trim().split(/(\s+)/); // Pega a senha digitada e converte em um vetor separando por espaços, ex. "Lápis Quebrou" vira "Lápis", " ", "Quebrou"
         password_char_groups = password_char_groups.filter((e) => {
             return e.trim().length > 0; // Filtra o vetor transformando espaços inúteis em nada e, removendo todos os nada
         })
         if (password_char_groups.length < 6) {
             setPassword(`${password} ${char}`); // Se a senha for menor que 6 então pega o valor da senha + um animal
-            props.password = password;
+            props.set(password);
+
             setCard(); // Remove o Card de Aviso
         }
         else {
