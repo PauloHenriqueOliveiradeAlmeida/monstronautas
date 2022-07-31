@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import styles from "./new_account.module.css"
-import Card from "./components/card"
 function NovoAluno() {
     const router = useRouter();
     const [sexo, setSexo] = useState("f");

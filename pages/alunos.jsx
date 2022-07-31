@@ -1,10 +1,13 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./alunos.module.css";
 import nookies from "nookies";
 import jsonwebtoken from "jsonwebtoken";
 import Connection from "./api/connection";
 import { useEffect, useState } from "react";
 function Alunos({childrens}) {
+    const [card, setCard] = useState();
     const [info_alunos, setInfo_alunos] = useState();
     const router = useRouter();
 
@@ -23,7 +26,7 @@ function Alunos({childrens}) {
         else {
             for (let i = 0; i < childrens.length; i++) {
                 alunos.push(
-                    <div className={styles.alunosCard} key={i}>
+                    <div className={styles.alunosCard} key={i} onClick={() => {cardAssistireDesempenho(childrens[i].id_aluno)}}>
                         <p className={styles.alunosCardName}>{childrens[i].nome_aluno}</p>
                         <p>{childrens[i].idade_aluno} Anos</p>    
                     </div> 
@@ -32,6 +35,25 @@ function Alunos({childrens}) {
         }
         setInfo_alunos(alunos);
     }, [childrens]);
+
+    function cardAssistireDesempenho(id) {
+        setCard(
+            <div className={styles.cardBg} onClick={() => {setCard()}}>
+                <div className={styles.cardAssistirDesempenho}>
+                    <Link href="/dashboard" passHref>
+                        <figure className={styles.assistir}>
+                            <Image src="/cardBotaoAssistir.svg" width={200} height={200} alt="Botão Assistir" />
+                            <legend>Assistir</legend>
+                        </figure>
+                    </Link>
+                    <figure className={styles.desempenho}>
+                        <Image src="/cardBotaoDesempenho.svg" width={200} height={200} alt="Botão Desempenho" />
+                        <legend>Desempenho</legend>
+                    </figure>
+                </div>
+            </div>
+        )
+    }
     return (
         <div className={styles.alunos}>
             <h1>Alunos</h1>
@@ -42,6 +64,7 @@ function Alunos({childrens}) {
             <button className={styles.addAlunos} onClick={() => {
                 router.push("/novoAluno");
             }}>+</button>
+            {card}
         </div>
     );
 }
@@ -50,7 +73,7 @@ export async function getServerSideProps(ctx) {
         const token = nookies.get(ctx);
         const id = jsonwebtoken.verify(token.next_auth_token, process.env.JWT_SECRET);
         
-        const con = await Connection("SELECT nome_aluno, idade_aluno FROM tb_alunos where fk_id_responsavel=?", [id.id]);
+        const con = await Connection("SELECT id_aluno, nome_aluno, idade_aluno FROM tb_alunos where fk_id_responsavel=?", [id.id]);
 
         return {
             props: {

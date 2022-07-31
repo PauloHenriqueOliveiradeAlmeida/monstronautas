@@ -15,7 +15,7 @@ function Password(props) {
         })
         if (password_char_groups.length < 6) {
             setPassword(`${password} ${char}`); // Se a senha for menor que 6 então pega o valor da senha + um animal
-            props.set(password);
+            props.set(`${password} ${char}`);
 
             setCard(); // Remove o Card de Aviso
         }

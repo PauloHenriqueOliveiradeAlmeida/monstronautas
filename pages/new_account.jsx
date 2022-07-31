@@ -30,7 +30,7 @@ function NewAccount() {
                 }
             }
             catch {
-                alert("Falha ao criar perfil, estamos trabalhando para corrigir isso");
+                alert("Email já cadastrado, tente com outro endereço de Email");
             }
           }
         else {

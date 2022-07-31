@@ -13,7 +13,6 @@
 }
 .form {
     background-color: #e9e9e98f;
-    backdrop-filter: blur(7px);
     width: 100%;
     display: flex;
     flex-direction: column;
