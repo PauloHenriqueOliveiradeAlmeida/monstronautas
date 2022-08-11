@@ -7,6 +7,7 @@
     flex-direction: column;
     background-image: var(--blue-gradient);
 }
+
 /* Propriedades do Fieldset com classe .form */
 .form {
     border: none;
@@ -38,9 +39,11 @@
     width: 100%;
     font-size: 1.3rem;
 }
+
 .formInput::placeholder {
     text-align: center;
 }
+
 .formInput[type="button"] {
     background-color: var(--blue2);
     color: var(--fg-white);
@@ -50,12 +53,14 @@
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
+
 .formInput[type="button"]:hover {
     color: var(--blue2);
     background-image: none;
     background-color: var(--fg-white);
     box-shadow: 0px 0px 25px var(--fg-white);
 }
+
 .criarConta {
     text-align: center;
     color: var(--fg-white);
@@ -65,6 +70,7 @@
     padding: 10px 70px;
     border-radius: 32px;
 }
+
 .criarConta:hover {
     background-color: #ffffff80;
     font-weight: bold;

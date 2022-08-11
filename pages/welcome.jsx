@@ -10,7 +10,7 @@ function Welcome() {
             </Link>
             <main className={styles.main}>
                 <figure className={styles.mascoteField}>
-                    <Image src="/main-mascote.svg" layout="responsive" width="30px" height={20} className={styles.mascote} alt="Mascote Voador"/>
+                    <Image src="/main-mascote.svg" layout="responsive" width="30px" height={20} className={styles.mascote} alt="Mascote Voador" />
                 </figure>
                 <div className={styles.mainText}>
                     <p className={styles.text}>Vamos viajar pelo espaço e...</p>
@@ -22,7 +22,7 @@ function Welcome() {
                         ],
                         autoStart: true, //controla se ja vai comecar a escrever
                         loop: true // controla se vai ficar sempre executando
-                    }} className={styles.typewriter}/>
+                    }} className={styles.typewriter} />
                     <Link href="/new_account" className={styles.button}>
                         <a className={styles.button}>Começar</a>
                     </Link>

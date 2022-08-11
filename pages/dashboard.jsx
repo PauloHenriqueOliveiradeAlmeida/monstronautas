@@ -2,25 +2,39 @@ import react from 'react';
 import styles from "./dashboard.module.css";
 import Image from "next/image";
 import Link from 'next/link';
-import { config } from '@fortawesome/fontawesome-svg-core';
-
+import { useState } from 'react';
 function dashboard() {
+    let [position, setPosition] = useState(-300);
+
+    function showMenu() {
+        setPosition(
+            position === 0 ? -50 : 0
+        );
+    }
     return (
         <div className={styles.body}>
 
-            <div className={styles.top}>
+            <header>
+                <nav className={styles.top}>
+                    <Image src="/logo.jpeg" layout="fixed" width="64px"
+                        height="64px" className={styles.logo} />
 
-                <Link href="">
-                    <Image src="/logo.png" layout="fixed" width="70px"
-                        height="70px" className={styles.logo} />
-                </Link>
+                    <div className='Configuracao'>
 
-                <Link href="">
-                    <Image src="/configuracao.png" layout="fixed"
-                        width="80px" height="80px" className={styles.config} />
-                </Link>
-
-            </div>
+                        <div className={styles.botao}>
+                            <label for="botao">Clique aqui</label>
+                            <input type="checkbox" className={styles.configuracao} id="botao" onChange={() => showMenu('list')} />
+                        </div>
+                    </div>
+                    <div style={{ right: `${position}vw` }} className={styles.list}>
+                        <ul className={styles.navList}>
+                            <li><a href="/">Meu Perfil</a></li>
+                            <li><a href="/">Login e senha</a></li>
+                            <li><a href="/">Adicionar amigo</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
 
             <div className={styles.center}>
 
@@ -48,12 +62,10 @@ function dashboard() {
                     <Image src="/nove.png" layout="responsive" width="80px"
                         height="80px" className={styles.nove} />
                 </Link>
-
                 <Link href="">
                     <Image src="/dez.png" layout="responsive" width="80px"
                         height="80px" className={styles.dez} />
                 </Link>
-
                 <Link href="">
                     <Image src="/treze.png" layout="responsive" width="80px"
                         height="80px" className={styles.treze} />
@@ -65,5 +77,10 @@ function dashboard() {
 
 
     )
+
 }
+
+
+
+
 export default dashboard;
