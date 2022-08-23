@@ -3,17 +3,18 @@ import styles from "./dashboard.module.css";
 import Image from "next/image";
 import Link from 'next/link';
 import { useState } from 'react';
+import { faGear } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function dashboard() {
     let [position, setPosition] = useState(-300);
 
     function showMenu() {
         setPosition(
-            position === 0 ? -50 : 0
+            position === 0 ? -80 : 0
         );
     }
     return (
         <div className={styles.body}>
-
             <header>
                 <nav className={styles.top}>
                     <Image src="/logo.jpeg" layout="fixed" width="64px"
@@ -21,10 +22,7 @@ function dashboard() {
 
                     <div className='Configuracao'>
 
-                        <div className={styles.botao}>
-                            <label for="botao">Clique aqui</label>
-                            <input type="checkbox" className={styles.configuracao} id="botao" onChange={() => showMenu('list')} />
-                        </div>
+                        <FontAwesomeIcon icon={faGear} onClick={showMenu} className={styles.configuracao} />
                     </div>
                     <div style={{ right: `${position}vw` }} className={styles.list}>
                         <ul className={styles.navList}>
@@ -33,47 +31,48 @@ function dashboard() {
                             <li><a href="/">Adicionar amigo</a></li>
                         </ul>
                     </div>
-                </nav>
-            </header>
-
+                </nav >
+            </header >
             <div className={styles.center}>
 
-                <Link href="" className={styles.link}>
+                <Link href="" passHref className={styles.link}>
                     <Image src="/dois.png" layout="responsive" width="80px"
-                        height="80px" className={styles.dois} id="img" />
+                        height="80px" className={styles.dois} id="img" alt="Entrar na Fase 1" />
                 </Link>
 
-                <Link href="">
+                <Link href="" passHref>
                     <Image src="/quatro.png" layout="responsive" width="80px"
-                        height="80px" className={styles.quatro} />
+                        height="80px" className={styles.quatro} alt="Entrar na Fase 2" />
                 </Link>
 
-                <Link href="">
+                <Link href="" passHref>
                     <Image src="/cinco.png" layout="responsive" width="80px"
-                        height="80px" className={styles.cinco} />
+                        height="80px" className={styles.cinco} alt="Entrar na Fase 3" />
                 </Link>
 
-                <Link href="">
+                <Link href="" passHref>
                     <Image src="/sete.png" layout="responsive" width="80px"
-                        height="80px" className={styles.sete} />
+                        height="80px" className={styles.sete} alt="Entrar na Fase 4" />
                 </Link>
 
-                <Link href="">
+                <Link href="" passHref>
                     <Image src="/nove.png" layout="responsive" width="80px"
-                        height="80px" className={styles.nove} />
+                        height="80px" className={styles.nove} alt="Entrar na Fase 5" />
                 </Link>
-                <Link href="">
+
+                <Link href="" passHref>
                     <Image src="/dez.png" layout="responsive" width="80px"
-                        height="80px" className={styles.dez} />
+                        height="80px" className={styles.dez} alt="Entrar na Fase 6" />
                 </Link>
-                <Link href="">
+
+                <Link href="" passHref>
                     <Image src="/treze.png" layout="responsive" width="80px"
-                        height="80px" className={styles.treze} />
+                        height="80px" className={styles.treze} alt="Entrar na Fase 7" />
                 </Link>
 
             </div>
 
-        </div>
+        </div >
 
 
     )

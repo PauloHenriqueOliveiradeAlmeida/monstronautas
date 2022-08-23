@@ -5,16 +5,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: var(--blue-gradient);
 }
-
+.container label {
+    margin-top: 40px;
+    font-size: 24px;
+}
 /* Propriedades do Fieldset com classe .form */
 .form {
     border: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 80vw;
+    width: 98%;
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, .5);
@@ -43,8 +45,7 @@
 .formInput::placeholder {
     text-align: center;
 }
-
-.formInput[type="button"] {
+.container button {
     background-color: var(--blue2);
     color: var(--fg-white);
     min-height: 10vh;
@@ -53,8 +54,7 @@
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
-
-.formInput[type="button"]:hover {
+.container button:hover {
     color: var(--blue2);
     background-image: none;
     background-color: var(--fg-white);

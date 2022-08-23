@@ -10,7 +10,7 @@ function Welcome() {
             </Link>
             <main className={styles.main}>
                 <figure className={styles.mascoteField}>
-                    <Image src="/main-mascote.svg" layout="responsive" width="30px" height={20} className={styles.mascote} alt="Mascote Voador" />
+                    <Image src="/main-mascote.svg" layout="responsive" width={0} height={0} className={styles.mascote} alt="Mascote Voador"/>
                 </figure>
                 <div className={styles.mainText}>
                     <p className={styles.text}>Vamos viajar pelo espaço e...</p>
