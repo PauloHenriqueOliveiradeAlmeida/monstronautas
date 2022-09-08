@@ -1,99 +1,55 @@
 .body {
-    overflow: hidden;
-}
-
-.center {
-    padding-top: 40px;
-    padding-left: 50px;
-}
-
-.center {
-    display: grid;
-    grid: repeat(2, 100px) / auto-flow 100px;
-    grid-row-gap: 80px;
-    grid-column-gap: 140px;
-    cursor: pointer;
-}
-
-.body {
     margin: 0px;
     padding: 0px;
 }
 
-.navList a {
-    color: #23232e;
-    text-decoration: none;
+.center {
+    height: 80vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid: repeat(2, 100px) / auto-flow 100px;
+    row-gap: 80px;
+    column-gap: 140px;
 }
-
-.top a:hover {
-    opacity: 0.7;
-}
-
 .logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
     cursor: pointer;
-    z-index: 2;
 }
 
-.top {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell,
-        'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #e9e9e98f;
-    height: 70px;
+    background-color: #b8b8b8;
+    box-shadow: 0 0 0 #2020209f;
+    padding: 0px 20px;
+    height: 85px;
 }
 
-.navList {
-    list-style: none;
-    display: flex;
-    z-index: 0;
-    width: 250px;
+.menuNav {
+    min-width: 300px;
     height: 100%;
-    background-color: #e9e9e98f;
+    background-color: #b8b8b8;
     color: #23232e;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     z-index: 1;
-    transition: transform 0.3s ease-in;
-}
-
-.navList li {
-    margin-left: 0;
-    color: #23232e;
-    margin-bottom: 90px;
+    position: fixed;
+    top: 85px;
+    transition: all .10s ease-in;
 }
 
 .menu {
-    cursor: pointer;
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	flex-direction: column;
+	height: 100%;
+	list-style: none;
+    text-align: center;
 }
-
-.menu div {
-    width: 32px;
-    height: 2px;
-    background: #f7f7f7;
-    margin: 8px;
-}
-
-.list {
-    top: 54px;
-    position: fixed;
-    transition: all .5s linear;
-    height: 100%;
-    z-index: 2;
-}
-
 .configuracao {
     position: relative;
     z-index: 3;
-    height: 50px;
-    right: 10px;
+    height: 60px;
     cursor: pointer;
 }
 

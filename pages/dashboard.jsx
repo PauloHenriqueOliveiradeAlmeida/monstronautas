@@ -1,38 +1,47 @@
-import react from 'react';
 import styles from "./dashboard.module.css";
 import Image from "next/image";
 import Link from 'next/link';
 import { useState } from 'react';
 import { faGear } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-function dashboard() {
-    let [position, setPosition] = useState(-300);
-
+function Dashboard() {
+    const [position, setPosition] = useState(-600);
     function showMenu() {
         setPosition(
-            position === 0 ? -80 : 0
+            position === 0 ? -600 : 0
         );
+        
     }
     return (
         <div className={styles.body}>
-            <header>
-                <nav className={styles.top}>
-                    <Image src="/logo.jpeg" layout="fixed" width="64px"
-                        height="64px" className={styles.logo} />
+            <header className={styles.header}>
+                <Image src="/logo.svg" layout="fixed" width={75}
+                    height={75} className={styles.logo} alt="Logotipo"/>
 
-                    <div className='Configuracao'>
+                <FontAwesomeIcon icon={faGear} onClick={showMenu} className={styles.configuracao} />
+                
+                <nav style={{ right: `${position}px` }} className={styles.menuNav}>
+                    <ul className={styles.menu}>
+                        <li>
+                            <Link href="" passHref>
+                                <figure>
+                                    <Image src="/botaoPerfil.svg" layout="fixed" width={200} height={200} alt="Ver Desempenho"/>
+                                    <legend>Perfil</legend>
+                                </figure>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="" passHref>
+                                <figure>
+                                    <Image src="/cardBotaoDesempenho.svg" layout="fixed" width={200} height={200} alt="Ver Desempenho"/>
+                                    <legend>Desempenho</legend>
+                                </figure>
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
 
-                        <FontAwesomeIcon icon={faGear} onClick={showMenu} className={styles.configuracao} />
-                    </div>
-                    <div style={{ right: `${position}vw` }} className={styles.list}>
-                        <ul className={styles.navList}>
-                            <li><a href="/">Meu Perfil</a></li>
-                            <li><a href="/">Login e senha</a></li>
-                            <li><a href="/">Adicionar amigo</a></li>
-                        </ul>
-                    </div>
-                </nav >
-            </header >
             <div className={styles.center}>
 
                 <Link href="" passHref className={styles.link}>
@@ -82,4 +91,4 @@ function dashboard() {
 
 
 
-export default dashboard;
+export default Dashboard;
