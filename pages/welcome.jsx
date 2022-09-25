@@ -25,7 +25,7 @@ function Welcome() {
                         ],
                         autoStart: true, //controla se ja vai comecar a escrever
                         loop: true // controla se vai ficar sempre executando
-                    }} className={styles.typewriter}/>
+                    }} className={styles.typewriter} />
                     <Link href="/new_account" className={styles.button}>
                         <a className={styles.button}>Começar</a>
                     </Link>

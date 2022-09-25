@@ -1,4 +1,3 @@
-import Card from "./components/card"
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";

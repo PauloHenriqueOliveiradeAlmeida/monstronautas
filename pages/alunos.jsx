@@ -40,7 +40,10 @@ function Alunos({childrens}) {
         setCard(
             <div className={styles.cardBg} onClick={() => {setCard()}}>
                 <div className={styles.cardAssistirDesempenho}>
-                    <Link href="/dashboard" passHref>
+                    <Link href={{
+                        pathname: "/dashboard",
+                        query: {id: id}
+                    }} passHref>
                         <figure className={styles.assistir}>
                             <Image src="/cardBotaoAssistir.svg" width={200} height={200} alt="Botão Assistir" />
                             <legend>Assistir</legend>

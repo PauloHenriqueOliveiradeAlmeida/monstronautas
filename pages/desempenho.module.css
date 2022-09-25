@@ -1,0 +1,72 @@
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.card {
+    background-color: var(--fg-white);
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 32px;
+}
+.body hr {
+    margin: 60px auto;
+    border: none;
+    border-radius: 32px;
+    width: 80%;
+    height: 7px;
+    background-color: var(--blue1);
+}
+.chartContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.chartMarkContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.chart {
+    width: 50%;
+}
+.aulaConcluida, .aulaNaoConcluida {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+.aulaConcluida {
+    background-color: var(--pink1);
+}
+.aulaNaoConcluida {
+    background-color: var(--blue1);
+}
+
+.button {
+    background-color: var(--blue1);
+    color: var(--fg-white);
+    text-align: center;
+    display: block;
+    padding: 20px 30px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 32px;
+    margin: 0px auto 10px auto;
+    transition: all .2s ease-in-out;
+    border: 1px solid var(--blue1);
+    cursor: pointer;
+}
+.button:hover {
+    background-color: var(--fg-white);
+    color: var(--blue1);
+    border: 1px solid var(--blue1);
+}
+@media (min-width: 769px) {
+    .chart {
+        width: 30%;
+    }
+}

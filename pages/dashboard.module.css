@@ -1,23 +1,145 @@
 .body {
-    background-image: url(/backgroud2.jpeg);
-    width: 100%;
-    height: 100vh;
-    max-height: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
 }
 
-.top {
+.center {
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    grid: repeat(1, 140px) / auto-flow 140px;
+    row-gap: 80px;
+    column-gap: 140px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.center::-webkit-scrollbar {
+    display: none;
+}
+
+.planetsContainer {
+    margin: auto;
+    color: var(--fg-white);
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: #b8b8b8;
+    box-shadow: 0 0 0 #2020209f;
+    padding: 0px 20px;
+    height: 85px;
+    z-index: 2;
 }
 
-.center {
-    padding-top: 40px;
-    padding-left: 80px;
+.menuNav {
+    min-width: 300px;
+    height: 100%;
+    background-color: #b8b8b8;
+    color: #23232e;
+    z-index: 2;
+    position: fixed;
+    top: 85px;
+    transition: all .10s ease-in;
 }
 
-.center {
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	flex-direction: column;
+	list-style: none;
+    text-align: center;
+}
+.configuracao {
+    position: relative;
+    z-index: 3;
+    height: 60px;
+    cursor: pointer;
+}
+
+.teacherFigure {
+    position: fixed;
+    bottom: -45px;
+    left: 0px;
+    margin: 0px;
+    background: linear-gradient(50deg, rgba(255,0,71,1) 28%, rgba(255,0,0,0.010224072539171902) 49%); 
+}
+.cardBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b7;
+    z-index: 4;
+}
+.cardVideo {
+    position: relative;
+    z-index: 5;
+    background-color: var(--fg-white);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 90%;
+    padding: 20px;
+}
+.close {
+    align-self: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.cardVideo iframe {
+    height: 100%;
+}
+.cardVideo button, .cardVideo iframe {
+    width: 100%;
+}
+.cardVideo button { 
+    border-radius: 32px;
+    border: none;
+    background-color: var(--blue1);
+    color: var(--fg-white);
+    font-size: 2rem;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+.activitiesOptions {
     display: grid;
-    grid: repeat(2, 60px) / auto-flow 80px;
-    grid-row-gap: 80px;
-    grid-column-gap: 140px;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+.activitiesOptions button {
+    width: 100%;
+    padding: 20px 40px;
+}
+@media (min-width: 820px) {
+    .cardVideo {
+        width: 60%;
+    }
+}
+
+@media (max-width: 586px) {
+    .center {
+        grid: repeat(1, 80px) / auto-flow 80px;
+        column-gap: 100px;
+    }
 }

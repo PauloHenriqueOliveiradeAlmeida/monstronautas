@@ -41,6 +41,7 @@
     width: 100%;
     font-size: 1.3rem;
 }
+
 .formInput::placeholder {
     text-align: center;
 }
@@ -59,6 +60,7 @@
     background-color: var(--fg-white);
     box-shadow: 0px 0px 25px var(--fg-white);
 }
+
 .criarConta {
     text-align: center;
     color: var(--fg-white);
@@ -68,6 +70,7 @@
     padding: 10px 70px;
     border-radius: 32px;
 }
+
 .criarConta:hover {
     background-color: #ffffff80;
     font-weight: bold;
