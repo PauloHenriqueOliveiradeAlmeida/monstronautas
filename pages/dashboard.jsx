@@ -194,9 +194,9 @@ function Dashboard({aulas, id}) {
                 <nav style={{ right: `${position}px` }} className={styles.menuNav}>
                     <ul className={styles.menu}>
                         <li>
-                            <Link href="" passHref>
+                            <Link href={{pathname: "/perfilAluno", query: {id: id}}} passHref>
                                 <figure>
-                                    <Image src="/botaoPerfil.svg" layout="fixed" width={200} height={200} alt="Ver Desempenho"/>
+                                    <Image src="/botaoPerfil.svg" layout="fixed" width={200} height={200} alt="Ver Perfil"/>
                                     <legend>Perfil</legend>
                                 </figure>
                             </Link>
