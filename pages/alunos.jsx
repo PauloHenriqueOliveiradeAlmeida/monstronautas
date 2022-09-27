@@ -49,10 +49,15 @@ function Alunos({childrens}) {
                             <legend>Assistir</legend>
                         </figure>
                     </Link>
-                    <figure className={styles.desempenho}>
-                        <Image src="/cardBotaoDesempenho.svg" width={200} height={200} alt="Botão Desempenho" />
-                        <legend>Desempenho</legend>
-                    </figure>
+                    <Link href={{
+                        pathname: "/perfilAluno",
+                        query: {id: id}
+                    }} passHref>
+                        <figure className={styles.desempenho}>
+                            <Image src="/cardBotaoDesempenho.svg" width={200} height={200} alt="Botão Desempenho" />
+                            <legend>Desempenho</legend>
+                        </figure>
+                    </Link>
                 </div>
             </div>
         )

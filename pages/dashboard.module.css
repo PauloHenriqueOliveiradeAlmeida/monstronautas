@@ -38,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #b8b8b8;
+    background-color: var(--fg-white);
     box-shadow: 0 0 0 #2020209f;
     padding: 0px 20px;
     height: 85px;
@@ -48,7 +48,7 @@
 .menuNav {
     min-width: 300px;
     height: 100%;
-    background-color: #b8b8b8;
+    background-color: var(--fg-white);
     color: #23232e;
     z-index: 2;
     position: fixed;
@@ -64,6 +64,17 @@
 	list-style: none;
     text-align: center;
 }
+
+.menu li {
+    cursor: pointer;
+    transition: all .2s linear;
+    border-radius: 32px;
+    margin-right: 20px;
+}
+.menu li:hover {    
+    background-color: #cecece;
+}
+
 .configuracao {
     position: relative;
     z-index: 3;
