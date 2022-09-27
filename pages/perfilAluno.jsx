@@ -5,19 +5,59 @@ import jsonwebtoken from "jsonwebtoken";
 import Connection from "./api/connection";
 import { faPenToSquare, faSave } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function PerfilAluno({nome, idade, sexo}) {
+import { useForm } from "react-hook-form";
+import Router from "next/router";
+function PerfilAluno({id, nome, idade, sexo}) {
     const [changeCard, setChangeCard] = useState();
+    const [sexoNovo, setSexoNovo] = useState("m");
+    const { register, handleSubmit } = useForm();
+
+    async function submit(data) {
+        const req = await fetch("/api/updateAlunos", {
+            method: "POST",
+            body: JSON.stringify({id: id, name: data.name, idade: data.idade, sexo: sexoNovo}),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        try {
+            const res = await req.json();
+            if (res.sucess) {
+                Router.reload();
+            }
+        }
+        catch {
+            window.alert("Não foi possível mudar as informações :(\nTente novamente mais tarde...")
+        }
+    }
 
     function changeDatas() {
         setChangeCard((
-            <div className={styles.bgCard}>
+            <form className={styles.bgCard} onSubmit={handleSubmit(submit)}>
                 <div className={`${styles.card} ${styles.changeCard}`}>
-                    <input type="text" />
-                    <input type="text" />
-                    <input type="text" />
-                    <button><FontAwesomeIcon icon={faSave} /></button>
+                    <input type="text" placeholder={nome} {...register("name")} />
+                    <div>
+                        <input type="number" placeholder={idade} {...register("idade")} /><label>anos</label>
+                    </div>
+
+                    <div>
+                        <div>
+                            <input type="radio" name="sexo" value="menino" id="menino" checked="true" onClick={() => {
+                                setSexoNovo("m");
+                            }}/>
+                            <label htmlFor="menino">Menino</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="sexo" value="menina" id="menina" onClick={() => {
+                                setSexoNovo("f");
+                            }}/>
+                            <label htmlFor="menina">Menina</label>
+                        </div>
+                    </div>
+                    <button className={styles.button}><FontAwesomeIcon icon={faSave} /></button>
                 </div>
-            </div>
+            </form>
         ));
     }
     return (
@@ -45,6 +85,7 @@ export async function getServerSideProps(ctx) {
 
         return {
             props: {
+                id: id,
                 nome: con[0].nome_aluno,
                 idade: con[0].idade_aluno,
                 sexo: con[0].sexo_aluno
