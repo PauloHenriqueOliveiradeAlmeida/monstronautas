@@ -7,6 +7,7 @@ import { faPenToSquare, faSave } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 import Router from "next/router";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 function PerfilAluno({id, nome, idade, sexo}) {
     const [changeCard, setChangeCard] = useState();
     const [sexoNovo, setSexoNovo] = useState("m");
@@ -36,6 +37,9 @@ function PerfilAluno({id, nome, idade, sexo}) {
         setChangeCard((
             <form className={styles.bgCard} onSubmit={handleSubmit(submit)}>
                 <div className={`${styles.card} ${styles.changeCard}`}>
+                    <FontAwesomeIcon icon={faClose} className={styles.close} onClick={() => {
+                        setChangeCard();
+                    }}/>
                     <input type="text" placeholder={nome} {...register("name")} />
                     <div>
                         <input type="number" placeholder={idade} {...register("idade")} /><label>anos</label>

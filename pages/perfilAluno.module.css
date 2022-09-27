@@ -21,7 +21,6 @@
 .card p {
     font-size: 1.4rem;
 }
-
 .card hr {
     height: 10px;
     width: 100%;
@@ -30,7 +29,6 @@
     background-color: var(--blue2);
     border: none;
 }
-
 .button {
     background-color: var(--blue1);
     width: 100%;
@@ -42,12 +40,10 @@
     border: 1px solid var(--blue1);
     transition: all .2s ease-in-out;
 }
-
 .button:hover {
     background-color: var(--fg-white);
     color: var(--blue1);
 }
-
 .bgCard {
     position: fixed;
     background-color: #00000052;
@@ -66,6 +62,11 @@
     flex-direction: column;
     gap: 40px;
     font-size: 22px;
+}
+.close {
+    align-self: flex-end;
+    font-size: 32px;
+    cursor: pointer;
 }
 .changeCard div {
     display: flex;
@@ -92,7 +93,6 @@
 .card input:focus {
     border-color: var(--pink1);
 }
-
 .changeCard input[type="radio"] {
     appearance: none;
     border-radius: 50%;
@@ -102,11 +102,9 @@
     box-shadow: inset 0px 0px 0px 1px var(--blue2);
     transition: all .2s linear;
 }
-
 .changeCard input[type="radio"]:checked {
     box-shadow: inset 0px 0px 0px 7px var(--pink1);
 }
-
 @media (min-width: 1025px) {
     .card {
         width: 50%;
