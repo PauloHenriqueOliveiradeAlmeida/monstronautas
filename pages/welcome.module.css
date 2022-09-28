@@ -27,43 +27,53 @@
     transition: all .5s ease;
     font-weight: bold;
 }
+
 .login:hover {
     background-position: left;
     color: var(--blue2);
     box-shadow: var(--button-light);
-    
+
 }
+
 .mascoteField {
     margin: 100px auto 0px auto;
     min-width: 120px;
     max-width: 300px;
     padding: 0px;
 }
+
 .mascoteField img {
     object-fit: contain;
 }
+
 .mascote {
     animation: mascote_move 10s infinite alternate;
     z-index: 1;
 }
+
 .text {
     font-size: 1.2rem;
     text-align: left;
     margin-top: -1.4%;
 }
+
 .button {
     background-image: var(--button-gradient);
     padding: 20px 120px;
     font-size: 1.5rem;
     border-radius: 32px;
     transition: all .5s ease-in-out;
+    z-index: 2;
+    position: relative;
 }
+
 .button:hover {
     background-image: none;
     background-color: var(--fg-white);
     box-shadow: var(--button-light);
     color: var(--blue2);
 }
+
 .content {
     display: flex;
     flex-direction: column;
@@ -75,12 +85,14 @@
     margin-top: 0px;
     color: var(--blue2);
 }
+
 .contentInfo {
     padding: 200px 30px;
     font-size: 25px;
     text-align: left;
     background-color: var(--fg-white);
 }
+
 .contentInfo hr {
     height: 10px;
     width: 50%;
@@ -94,6 +106,7 @@
     0% {
         transform: rotate(-10deg);
     }
+
     50% {
         transform: translateY(40px);
     }
@@ -103,9 +116,11 @@
     .container {
         font-size: 10rem;
     }
+
     .main {
         padding: 30px;
     }
+
     .mascoteField {
         margin: 0px;
         width: 50%;
@@ -114,9 +129,11 @@
         bottom: 180px;
         z-index: 1;
     }
+
     .mainText {
         margin-top: 40vh;
     }
+
     .mainText p {
         margin-bottom: 20px;
     }
