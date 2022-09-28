@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { faClose, faGear, faForward, faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Planet from "./components/planet";
+import ReactAudioPlayer from 'react-audio-player';
 function Dashboard({aulas, id}) {
     const [position, setPosition] = useState(-600);
     const [cardVideo, setCardVideo] = useState();
@@ -21,7 +22,7 @@ function Dashboard({aulas, id}) {
     const phases = [
         {
             question: "Qual das imagens é o mouse?",
-            audio: "",
+            audio: "audio2",
             options: [
                 {
                     img: "monitor",
@@ -40,7 +41,7 @@ function Dashboard({aulas, id}) {
         },
         {
         question: "Qual é o símbolo de Download?",
-        audio: "",
+        audio: "audio5",
         options: [
             {
                 img: "power",
@@ -62,7 +63,7 @@ function Dashboard({aulas, id}) {
         },
         {
             question: "Qual é o celular?",
-            audio: "",
+            audio: "audio3",
             options: [
                 {
                     img: "celular",
@@ -124,6 +125,10 @@ function Dashboard({aulas, id}) {
         setCardVideo((
             <div className={styles.cardBg}>
                 <div className={styles.cardVideo}>
+                    <ReactAudioPlayer
+                        src={`/audio/${phases[phase].audio}.mp4`}
+                        autoPlay
+                    />
                     <FontAwesomeIcon icon={faClose} className={styles.close} onClick={() => {setCardVideo()}}/>
                     <iframe src="/professorAnimate.svg" frameBorder="0"></iframe>
                     <h3>{phases[phase].question}</h3>
@@ -144,6 +149,10 @@ function Dashboard({aulas, id}) {
             setCardVideo((
                 <div className={styles.cardBg}>
                     <div className={styles.cardVideo}>
+                        <ReactAudioPlayer
+                            src="/audio/audio6.mp4"
+                            autoPlay
+                        />
                         <FontAwesomeIcon icon={faClose} className={styles.close} onClick={() => {setCardVideo()}}/>
                         <iframe src="/professorAnimate.svg" frameBorder="0"></iframe>
                         <h3>Você Acertou, Parabéns!</h3>
@@ -163,7 +172,7 @@ function Dashboard({aulas, id}) {
             try {
                 const res = await req.json();
                 if (res.sucess) {
-                    setTimeout(() => {Router.reload()}, 2000);
+                    setTimeout(() => {Router.reload()}, 7000);
                     
                 }
             } catch {
@@ -174,6 +183,10 @@ function Dashboard({aulas, id}) {
             setCardVideo((
                 <div className={styles.cardBg}>
                     <div className={styles.cardVideo}>
+                        <ReactAudioPlayer
+                            src="/audio/audio7.mp4"
+                            autoPlay
+                        />
                         <FontAwesomeIcon icon={faClose} className={styles.close} onClick={() => {setCardVideo()}}/>
                         <iframe src="/professorAnimate.svg" frameBorder="0"></iframe>
                         <h3>Que Pena, Quem sabe mais tarde você consiga...</h3>
@@ -220,7 +233,12 @@ function Dashboard({aulas, id}) {
                 {planets}
                 {cardVideo}
             </div>
+            
             <figure className={styles.teacherFigure}>
+                <ReactAudioPlayer
+                    src="/audio/audio4.mp4"
+                    autoPlay={aulas<=1?true:false}
+                />            
                 <Image src="/professor.svg" alt="Professor" layout="fixed" width={200} height={200} className={styles.teacher}/>
             </figure>
         </div>

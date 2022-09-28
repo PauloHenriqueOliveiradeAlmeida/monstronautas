@@ -15,7 +15,7 @@ function Login() {
         <form className={styles.container} onSubmit={handleSubmit(sign)}>
             <h2 className={styles.login}>Olá, Vamos começar a Aprender!</h2>
             <fieldset className={styles.form}>
-                <input className={styles.formInput} type="email" name="email" placeholder="Email da Mamãe" {...register("email")}/>
+                <input className={styles.formInput} type="email" name="email" placeholder="Digite seu email" {...register("email")}/>
 
                 <label>Agora a senha</label>
                 <Password set={setPassword}/>
