@@ -50,7 +50,7 @@ function Alunos({childrens}) {
                         </figure>
                     </Link>
                     <Link href={{
-                        pathname: "/perfilAluno",
+                        pathname: "/desempenho",
                         query: {id: id}
                     }} passHref>
                         <figure className={styles.desempenho}>
