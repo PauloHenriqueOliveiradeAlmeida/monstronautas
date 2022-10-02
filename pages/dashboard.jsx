@@ -5,7 +5,7 @@ import Router from "next/router";
 import nookies from "nookies";
 import jsonwebtoken from "jsonwebtoken";
 import Connection from "./api/connection";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { faClose, faGear, faForward, faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Planet from "./components/planet";
@@ -84,6 +84,7 @@ function Dashboard({aulas, id}) {
             ]
             }
     ]
+    
     for (let i = 1; i <= 3; i++) {
         planets.push(
         <div className={styles.planetsContainer} onClick={() => {showCardVideo(aulas < i ? true : false, i - 1)}} key={`containerAula${i}`}>

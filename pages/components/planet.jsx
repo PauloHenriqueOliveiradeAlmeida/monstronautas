@@ -8,4 +8,10 @@ function Planet({props}) {
         </figure>
     );
 }
+
+Planet.defaultProps = {
+    numberPlanet: 1,
+    locked: "Lock"
+}
+
 export default Planet;
