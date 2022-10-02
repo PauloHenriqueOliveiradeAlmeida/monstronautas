@@ -94,18 +94,16 @@
 }
 
 .contentInfo iframe {
-    height: 900px;
+    height: 50vh;
     object-fit: contain;
-}
-
-.contentInfo div {
-    margin-bottom: 300px;
 }
 
 .contentInfo article {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap-reverse;
+    margin-bottom: 300px;
 }
 
 .contentInfo p {
@@ -118,6 +116,7 @@
     margin: 20px 0px;
     border-radius: 32px;
     background-color: var(--blue2);
+    border: none;
 }
 
 /* Animação que faz o mascote balançar */
@@ -155,5 +154,8 @@
 
     .mainText p {
         margin-bottom: 20px;
+    }
+    .contentInfo article {
+        flex-wrap: nowrap;
     }
 }

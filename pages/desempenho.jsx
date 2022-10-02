@@ -41,7 +41,7 @@ function Desempenho({nome, idade, sexo, aula_atual, token}) {
         <div className={styles.body}>
             <div className={styles.card}>
                 <h2>{nome}</h2>
-                <h3>{idade} anos, {sexo == "m" ? "menina" : "menino"}</h3>
+                <h3>{idade} anos, {sexo == "m" ? "menino" : "menina"}</h3>
                 <hr />
                 <p>Aulas Concluídas: {aula_atual == 1 ? "Nenhuma" : aula_atual - 1}</p>
                 <div className={styles.chartContainer}>

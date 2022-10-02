@@ -42,7 +42,7 @@ function Welcome() {
                                 <Slide left>
                                     <h2>Causa pela qual lutamos</h2>
                                     <hr />
-                                    <p>Diante da relevância da revolução tecnológica para a sociedade, e diversas pesquisas sobre o tema, percebemos que a exclusão do acesso às ferramentas digitais, elevam amplas desigualdades sociais.</p>
+                                    <p>Diante da relevância da revolução tecnológica para a sociedade, e diversas pesquisas sobre o tema, percebemos que a exclusão do acesso às ferramentas digitais, elevam amplas desigualdades sociais</p>
                                 </Slide>
                             </div>
                             <div>
@@ -60,22 +60,33 @@ function Welcome() {
                                     <p>No método de funcionamento buscamos uma forma intitulada “Gameficação” que consiste em tornar a experiência do usuário mais atrativa simulando como se tudo fosse “um jogo”</p>
                                 </Slide>
                             </div>
-                        </article>
-                        <article>
                             <div>
-                                <Slide left>
-                                    <h2>Nosso Objetivo em Geral</h2>
-                                    <hr />
-                                    <p>O objetivo geral de nosso projeto é poder auxiliar as crianças no básico da informática, de maneira simples e inclusiva.</p>
+                                <Slide right>
+                                    <iframe src="/welcome/monstroJogando.svg" frameBorder="0"></iframe>
                                 </Slide>
                             </div>
                         </article>
                         <article>
                             <div>
                                 <Slide left>
-                                    <h2>Nosso Objetivo Específico</h2>
+                                    <h2>Nosso Objetivo em Geral</h2>
                                     <hr />
-                                    <p>Nosso objetivo específico é de possibilitar aos usuários a oportunidade de se familiarizem com o computador desde a infância para que mais a frente elas tenham facilidade para realizar trabalhos escolares e até mesmo em seus futuros empregos.</p>
+                                    <p>O objetivo geral de nosso projeto é poder auxiliar as crianças no básico da informática, de maneira simples e inclusiva</p>
+                                </Slide>
+                            </div>
+                            <div>
+                                <Slide right>
+                                    <iframe src="/welcome/monstroObjetivo.svg" frameBorder="0"></iframe>
+                                </Slide>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <Slide left>
+                                    <h2>Como Funciona</h2>
+                                    <hr />
+                                    <p>Ao clicar no botão "Começar" você cria uma conta de Professor/Responsável
+                                        e pode "matricular" seus filhos ou alunos no site</p>
                                 </Slide>
                             </div>
                         </article>
