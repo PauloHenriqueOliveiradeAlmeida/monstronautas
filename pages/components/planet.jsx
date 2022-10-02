@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./planet.module.css";
-function Planet({props}) {
+function Planet(props) {
     return (
         <figure className={styles.planetFigure}>
             <Image src={`/planets/planet${props.numberPlanet}${props.locked}.svg`} layout="fixed" width="140px" 

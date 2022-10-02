@@ -84,15 +84,15 @@ function Dashboard({aulas, id}) {
             ]
             }
     ]
-    
+
     for (let i = 1; i <= 3; i++) {
         planets.push(
         <div className={styles.planetsContainer} onClick={() => {showCardVideo(aulas < i ? true : false, i - 1)}} key={`containerAula${i}`}>
             <h3 key={`nomeAula${i}`}>Aula {i}</h3>
-            <Planet props={{
-                numberPlanet: i,
-                locked: aulas < i ? "Lock" : ""
-            }} key={`aula${i}`}/>
+            <Planet
+                numberPlanet={i}
+                locked={aulas < i ? "Lock" : ""}
+                key={`aula${i}`} />
         </div>
         )
     }
