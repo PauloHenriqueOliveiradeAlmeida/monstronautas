@@ -11,7 +11,17 @@ import Certificado from "./certificado";
 function Desempenho({nome, idade, sexo, aula_atual, token}) {
     const [toCertificate, setToCertificate] = useState({complete: false});
     const pdf = <Certificado/>
+    let pdfDownloader;
 
+    if (typeof window != "undefined") {
+        pdfDownloader = <PDFDownloadLink document={pdf} fileName="Certificado.pdf" className={styles.button} style={{display: toCertificate.complete == true ? "block" : "none"}}>
+            {({ blob, url, loading, error }) =>
+            loading ? 'Carregando Certificado...' : 'Baixar Certificado'
+            }
+        </PDFDownloadLink>
+        }
+
+        
     const data = [
         {title: "Aulas Concluídas", value: aula_atual == 1 ? 0 : aula_atual - 1, color: "#FF0099"},
         {title: "Aulas não Concluídas", value: 3 - aula_atual < 0 ? 0 : 3 - aula_atual, color: "#4B08AD"}
@@ -42,11 +52,7 @@ function Desempenho({nome, idade, sexo, aula_atual, token}) {
                     <PieChart data={data} className={styles.chart} startAngle={90} label={({ dataEntry }) => dataEntry.value} lineWidth={30} animate/>
                 </div>
                 <hr style={{display: toCertificate.complete == true ? "block" : "none"}}/>
-                <PDFDownloadLink document={pdf} fileName="Certificado.pdf" className={styles.button} style={{display: toCertificate.complete == true ? "block" : "none"}}>
-                    {({ blob, url, loading, error }) =>
-                    loading ? 'Carregando Certificado...' : 'Baixar Certificado'
-                    }
-                </PDFDownloadLink>
+                {pdfDownloader}
             </div>
         </div>
     );

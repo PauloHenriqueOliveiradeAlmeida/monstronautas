@@ -93,6 +93,25 @@
     background-color: var(--fg-white);
 }
 
+.contentInfo iframe {
+    height: 900px;
+    object-fit: contain;
+}
+
+.contentInfo div {
+    margin-bottom: 300px;
+}
+
+.contentInfo article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentInfo p {
+    line-height: 40px;
+}
+
 .contentInfo hr {
     height: 10px;
     width: 50%;
