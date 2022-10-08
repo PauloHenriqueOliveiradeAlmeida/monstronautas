@@ -44,7 +44,9 @@ Visando melhorar o ensino à informática desde as fases iniciais da infância, 
 
 
 Ao fato do aplicativo ser um projeto realizado para um TCC, possui licença livre e pode ser utilizado e modificado,
-porém, pedimos para nos deixarem os créditos se o utlizarem para fins pessoais.
+porém, pedimos para nos deixarem os créditos se o utilizarem para fins pessoais.
+
+Não permitido o uso para fins comerciais.
 
 
 ## 💻 Pré-Requisitos
