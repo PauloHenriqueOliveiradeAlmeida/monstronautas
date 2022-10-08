@@ -5,7 +5,7 @@ import styles from "./cardDev.module.css"
  function CardDev(props) {
 
     const name = props.name != undefined ? props.name.split(" ", 1) : "";
-    const secondName = props.name.substr(props.name.indexOf(" "), props.name.length);
+    const secondName = props.name != undefined ? props.name.substr(props.name.indexOf(" "), props.name.length) : "";
 
     return (
         <div className={styles.card}>
