@@ -120,12 +120,17 @@ function Welcome() {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e9e9e9" fillOpacity="1" d="M0,96L11.4,85.3C22.9,75,46,53,69,37.3C91.4,21,114,11,137,58.7C160,107,183,213,206,240C228.6,267,251,213,274,186.7C297.1,160,320,160,343,154.7C365.7,149,389,139,411,160C434.3,181,457,235,480,245.3C502.9,256,526,224,549,181.3C571.4,139,594,85,617,90.7C640,96,663,160,686,176C708.6,192,731,160,754,144C777.1,128,800,128,823,112C845.7,96,869,64,891,90.7C914.3,117,937,203,960,208C982.9,213,1006,139,1029,101.3C1051.4,64,1074,64,1097,90.7C1120,117,1143,171,1166,160C1188.6,149,1211,75,1234,42.7C1257.1,11,1280,21,1303,48C1325.7,75,1349,117,1371,160C1394.3,203,1417,245,1429,266.7L1440,288L1440,0L1428.6,0C1417.1,0,1394,0,1371,0C1348.6,0,1326,0,1303,0C1280,0,1257,0,1234,0C1211.4,0,1189,0,1166,0C1142.9,0,1120,0,1097,0C1074.3,0,1051,0,1029,0C1005.7,0,983,0,960,0C937.1,0,914,0,891,0C868.6,0,846,0,823,0C800,0,777,0,754,0C731.4,0,709,0,686,0C662.9,0,640,0,617,0C594.3,0,571,0,549,0C525.7,0,503,0,480,0C457.1,0,434,0,411,0C388.6,0,366,0,343,0C320,0,297,0,274,0C251.4,0,229,0,206,0C182.9,0,160,0,137,0C114.3,0,91,0,69,0C45.7,0,23,0,11,0L0,0Z"></path></svg>
             </section>
             
-            <section className={styles.cards}>
-                <CardDev name="Erick Rian"     cargo="Backend Dev"   username="erickrian" />
-                <CardDev name="Maria Eduarda"  cargo="Documentadora" username="Mariaoliveiraa" />
-                <CardDev name="Maria Rita"     cargo="Documentadora" username="erickrian"/>
-                <CardDev name="Matheus Frank"  cargo="Frontend Dev"  username="M4theusFrank" />
-                <CardDev name="Paulo Henrique" cargo="Fullstack Dev" username="PauloHenriqueOliveiradeAlmeida" />
+            <section className={styles.cardsSection}>
+                <h2 className={styles.devText}>Desenvolvedores</h2>
+                <div className={styles.cards}>
+                    <Slide bottom>
+                        <CardDev name="Erick Rian"     cargo="Backend Dev"   username="erickrian" />
+                        <CardDev name="Maria Eduarda"  cargo="Documentadora" username="Mariaoliveiraa" />
+                        <CardDev name="Maria Rita"     cargo="Documentadora" username="erickrian"/>
+                        <CardDev name="Matheus Frank"  cargo="Frontend Dev"  username="M4theusFrank" />
+                        <CardDev name="Paulo Henrique" cargo="Fullstack Dev" username="PauloHenriqueOliveiradeAlmeida" />
+                    </Slide>
+                </div>
             </section>
 
             <section className={styles.content}>

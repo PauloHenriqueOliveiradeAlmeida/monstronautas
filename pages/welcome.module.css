@@ -121,12 +121,21 @@
     border: none;
 }
 
+.cardsSection {
+    margin: 300px 0px;
+    padding: 0px 5px;
+}
+
+.devText {
+    font-size: 50%;
+    margin-bottom: 100px;
+}
+
 .cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
-    margin: 400px 0px;
 }
 
 /* Animação que faz o mascote balançar */
