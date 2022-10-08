@@ -1,5 +1,6 @@
 import Link from "next/link"
 import styles from "./login.module.css"
+import Head from "next/head";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../contexts/context";
@@ -13,6 +14,10 @@ function Login() {
     }
     return (
         <form className={styles.container} onSubmit={handleSubmit(sign)}>
+            <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Login</title>
+            </Head>
             <h2 className={styles.login}>Olá, Vamos começar a Aprender!</h2>
             <fieldset className={styles.form}>
                 <input className={styles.formInput} type="email" name="email" placeholder="Digite seu email" {...register("email")}/>

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import styles from "./perfilAluno.module.css";
 import nookies from "nookies";
@@ -66,6 +67,10 @@ function PerfilAluno({id, nome, idade, sexo}) {
     }
     return (
         <div className={styles.body}>
+            <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Perfil do Aluno</title>
+            </Head>
             <div className={styles.card}>
                 <h2>{nome}</h2>
                 <hr />

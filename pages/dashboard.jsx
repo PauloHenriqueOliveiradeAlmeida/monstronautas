@@ -1,6 +1,7 @@
 import styles from "./dashboard.module.css";
 import Image from "next/image";
 import Link from 'next/link';
+import Head from "next/head";
 import Router from "next/router";
 import nookies from "nookies";
 import jsonwebtoken from "jsonwebtoken";
@@ -199,6 +200,10 @@ function Dashboard({aulas, id}) {
     }
     return (
         <div className={styles.body}>
+            <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Dashboard</title>
+            </Head>
             <header className={styles.header}>
                 <Image src="/logo.svg" layout="fixed" width={75}
                     height={75} className={styles.logo} alt="Logotipo"/>

@@ -111,6 +111,23 @@
     border: none;
 }
 
+.login {
+    text-align: center;
+    color: var(--fg-white);
+    display: block;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+    padding: 10px 70px;
+    border-radius: 32px;
+}
+
+.login:hover {
+    background-color: #ffffff80;
+    font-weight: bold;
+    color: #221d38;
+}
+
+
 @media (min-width: 801px) {
     .container {
         padding: 80px;

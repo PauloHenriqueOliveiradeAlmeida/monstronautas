@@ -1,3 +1,5 @@
+import Head from 'next/head';
+import Link from 'next/link';
 import Card from './components/card';
 import styles from "./new_account.module.css"
 import { useForm } from "react-hook-form";
@@ -39,6 +41,11 @@ function NewAccount() {
     }
     return (
         <div className={styles.container}>
+            <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Criar Conta</title>
+            </Head>
+
             <h2>Olá, Vamos Começar!</h2>
             <form className={styles.form}  onSubmit={handleSubmit(submit)}>
                 <label htmlFor="nome">Gostaríamos de saber seu Nome</label>
@@ -52,6 +59,9 @@ function NewAccount() {
                 <Password set={setPassword}/>
                 <button className={styles.submit}>Partir para a Aventura!</button>
             </form>
+            <Link href="/login">
+                <a className={styles.login}>Já tem uma conta? Faça Login</a>
+            </Link>
         </div >
     )
 }

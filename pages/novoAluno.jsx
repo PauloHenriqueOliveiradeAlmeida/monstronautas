@@ -1,7 +1,8 @@
+import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import styles from "./new_account.module.css"
+import styles from "./new_account.module.css";
 function NovoAluno() {
     const router = useRouter();
     const [sexo, setSexo] = useState("f");
@@ -27,6 +28,10 @@ function NovoAluno() {
       }
     return (
         <div className={styles.container}>
+          <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Novo Aluno</title>
+            </Head>
             <h2>Vamos Começar</h2>
             <form className={styles.form} onSubmit={handleSubmit(submit)}>
                 <label htmlFor="">Nome:</label>

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 import styles from "./alunos.module.css";
 import nookies from "nookies";
 import jsonwebtoken from "jsonwebtoken";
@@ -64,6 +65,11 @@ function Alunos({childrens}) {
     }
     return (
         <div className={styles.alunos}>
+            <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Alunos</title>
+            </Head>
+
             <h1>Alunos</h1>
             <hr />
             <div className={styles.infoAlunos}>

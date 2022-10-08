@@ -1,5 +1,6 @@
 import Typewriter from "typewriter-effect";
 import Link from "next/link";
+import Head from "next/head";
 import styles from "./welcome.module.css"
 import Image from "next/image";
 import Slide from "react-reveal/Slide";
@@ -7,6 +8,10 @@ import CardDev from "./components/cardDev";
 function Welcome() {
     return (
         <div className={styles.container}>
+            <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Porque aprender também é divertido!</title>
+            </Head>
             <header className={styles.header}>
                 <Link href="/login" className={styles.login}>
                     <a className={styles.login}>Continuar a Aventura</a>

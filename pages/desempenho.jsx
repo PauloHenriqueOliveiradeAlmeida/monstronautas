@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Head from "next/head";
 import styles from "./desempenho.module.css";
 import nookies from "nookies";
 import jsonwebtoken from "jsonwebtoken";
@@ -39,6 +39,10 @@ function Desempenho({nome, idade, sexo, aula_atual, token}) {
 
     return (
         <div className={styles.body}>
+            <Head>
+                <html lang="pt-br"/>
+                <title>Monstronautas - Monitoramento Paterno</title>
+            </Head>
             <div className={styles.card}>
                 <h2>{nome}</h2>
                 <h3>{idade} anos, {sexo == "m" ? "menino" : "menina"}</h3>
