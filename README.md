@@ -146,3 +146,6 @@ https://monstronautas.vercel.app
 <img src="https://www.github.com/PauloHenriqueOliveiradeAlmeida.png" alt="Paulo Henrique" style="width: 120px; border-radius: 50px;">
 
 <a href="https://github.com/PauloHenriqueOliveiradeAlmeida">![Repositório](https://shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
+
+<br><br>
+![Monstros Despedida](https://monstronautas.vercel.app/monstros.svg)
