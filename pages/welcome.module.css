@@ -80,7 +80,9 @@
     color: #242424ce;
     filter: drop-shadow(0px 0px 10px #2020209f);
 }
-
+.content h3 {
+    text-align: center;
+}
 .content h2 {
     margin-top: 0px;
     color: var(--blue2);
@@ -117,6 +119,14 @@
     border-radius: 32px;
     background-color: var(--blue2);
     border: none;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 400px 0px;
 }
 
 /* Animação que faz o mascote balançar */
