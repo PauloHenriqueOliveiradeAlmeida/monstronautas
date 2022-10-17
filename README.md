@@ -132,8 +132,15 @@ https://monstronautas.vercel.app
 
 <img src="https://www.github.com/Mariaoliveiraa.png" alt="Maria Eduarda" style="width: 120px; border-radius: 50px;">
 
-
 <a href="https://github.com/Mariaoliveiraa">![Repositório](https://shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
+
+
+**Maria Rita**
+
+<img src="https://www.github.com/MahSoares.png" alt="Maria Eduarda" style="width: 120px; border-radius: 50px;">
+
+<a href="https://github.com/MahSoares">![Repositório](https://shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
+
 
 **Matheus Frank**
 
