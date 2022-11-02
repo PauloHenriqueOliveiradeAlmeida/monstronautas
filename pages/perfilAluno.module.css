@@ -63,10 +63,15 @@
     gap: 40px;
     font-size: 22px;
 }
-.close {
+.close, .return {
     align-self: flex-end;
     font-size: 32px;
     cursor: pointer;
+}
+.return {
+    display: block;
+    width: 100%;
+    text-align: right;
 }
 .changeCard div {
     display: flex;

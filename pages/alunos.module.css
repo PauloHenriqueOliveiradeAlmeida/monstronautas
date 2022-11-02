@@ -19,6 +19,7 @@
     height: 80px;
     font-size: 3rem;
     transition: all .3s linear;
+    cursor: pointer;
 }
 .addAlunos:hover {
     background-image: none;

@@ -1,7 +1,10 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 import styles from "./new_account.module.css";
 function NovoAluno() {
     const router = useRouter();
@@ -29,11 +32,11 @@ function NovoAluno() {
     return (
         <div className={styles.container}>
           <Head>
-                <html lang="pt-br"/>
                 <title>Monstronautas - Novo Aluno</title>
             </Head>
             <h2>Vamos Começar</h2>
             <form className={styles.form} onSubmit={handleSubmit(submit)}>
+                <Link href="/alunos"><a className={styles.close}><FontAwesomeIcon icon={faClose}/></a></Link>
                 <label htmlFor="">Nome:</label>
                 <input type="text" className={styles.input} {...register("name")} required/>
 

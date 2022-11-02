@@ -56,6 +56,11 @@
 .form input[type="radio"]:checked {
     box-shadow: inset 0px 0px 0px 7px var(--pink1);
 }
+.close {
+    align-self: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
+}
 .echoPassword {
     border: 1px solid var(--blue2);
     height: 70px;

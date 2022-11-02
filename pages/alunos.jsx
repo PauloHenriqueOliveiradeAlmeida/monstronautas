@@ -66,7 +66,6 @@ function Alunos({childrens}) {
     return (
         <div className={styles.alunos}>
             <Head>
-                <html lang="pt-br"/>
                 <title>Monstronautas - Alunos</title>
             </Head>
 

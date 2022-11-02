@@ -12,6 +12,15 @@
     padding: 10px;
     border-radius: 32px;
 }
+
+.close {
+    display: block;
+    text-align: right;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
 .body hr {
     margin: 60px auto;
     border: none;

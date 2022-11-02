@@ -201,12 +201,11 @@ function Dashboard({aulas, id}) {
     return (
         <div className={styles.body}>
             <Head>
-                <html lang="pt-br"/>
                 <title>Monstronautas - Dashboard</title>
             </Head>
             <header className={styles.header}>
-                <Image src="/logo.svg" layout="fixed" width={75}
-                    height={75} className={styles.logo} alt="Logotipo"/>
+                <Link href="/alunos" passHref><Image src="/logo.svg" layout="fixed" width={75}
+                    height={75} className={styles.logo} alt="Logotipo"/></Link>
 
                 <FontAwesomeIcon icon={faGear} onClick={showMenu} className={styles.configuracao} />
                 

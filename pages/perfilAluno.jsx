@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./perfilAluno.module.css";
 import nookies from "nookies";
 import jsonwebtoken from "jsonwebtoken";
@@ -17,7 +18,7 @@ function PerfilAluno({id, nome, idade, sexo}) {
     async function submit(data) {
         const req = await fetch("/api/updateAlunos", {
             method: "POST",
-            body: JSON.stringify({id: id, name: data.name, idade: data.idade, sexo: sexoNovo}),
+            body: JSON.stringify({id: id, name: data.name.trim() != "" ? data.name : nome, idade: data.idade != "" ? data.idade : idade, sexo: sexoNovo}),
             headers: {
                 "Content-Type": "application/json"
             }
@@ -68,10 +69,13 @@ function PerfilAluno({id, nome, idade, sexo}) {
     return (
         <div className={styles.body}>
             <Head>
-                <html lang="pt-br"/>
                 <title>Monstronautas - Perfil do Aluno</title>
             </Head>
             <div className={styles.card}>
+                <Link href={{
+                    pathname: "/dashboard",
+                    query: {id: id}
+                }}><a className={styles.return}><FontAwesomeIcon icon={faClose}/></a></Link>
                 <h2>{nome}</h2>
                 <hr />
                 <p>Idade: {idade} anos</p>

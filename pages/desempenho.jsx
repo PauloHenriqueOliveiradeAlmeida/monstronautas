@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "./desempenho.module.css";
 import nookies from "nookies";
 import jsonwebtoken from "jsonwebtoken";
@@ -6,9 +7,11 @@ import Connection from "./api/connection";
 import { PieChart } from "react-minimal-pie-chart";
 import { useEffect, useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 import Certificado from "./certificado";
 
-function Desempenho({nome, idade, sexo, aula_atual, token}) {
+function Desempenho({id, nome, idade, sexo, aula_atual, token}) {
     const [toCertificate, setToCertificate] = useState({complete: false});
     const pdf = <Certificado/>
     let pdfDownloader;
@@ -40,10 +43,13 @@ function Desempenho({nome, idade, sexo, aula_atual, token}) {
     return (
         <div className={styles.body}>
             <Head>
-                <html lang="pt-br"/>
                 <title>Monstronautas - Monitoramento Paterno</title>
             </Head>
             <div className={styles.card}>
+            <Link href={{
+                pathname: "/dashboard",
+                query: {id: id}
+                }}><a className={styles.close}><FontAwesomeIcon icon={faClose}/></a></Link>
                 <h2>{nome}</h2>
                 <h3>{idade} anos, {sexo == "m" ? "menino" : "menina"}</h3>
                 <hr />
@@ -79,6 +85,7 @@ export async function getServerSideProps(ctx) {
         }
         return {
             props: {
+                id: id,
                 nome: con[0].nome_aluno,
                 idade: con[0].idade_aluno,
                 sexo: con[0].sexo_aluno,
