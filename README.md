@@ -21,7 +21,7 @@ Visando melhorar o ensino à informática desde as fases iniciais da infância, 
 
 **Front-end:**
 
-![ReactJS](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS3-blue?logo=css3&logoColor=white&style=for-the-badge)
+![ReactJS](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=black&style=for-the-badge) ![CSS](https://img.shields.io/badge/CSS3-blue?logo=css3&logoColor=white&style=for-the-badge)
 
 **Back-end:**
 
@@ -118,15 +118,17 @@ Aqui você pode ver uma demonstração ao vivo do projeto:
 
 https://monstronautas.vercel.app
 
+**Video de Demonstração:**
+
+[![Vídeo de demonstração](https://img.youtube.com/vi/LEQ9sj1c6Cc/0.jpg)](https://www.youtube.com/watch?v=LEQ9sj1c6Cc)
+
+
 ## Desenvolvedores
 
 **Erick Rian**
 
 <img src="https://www.github.com/erickrian.png" alt="Erick" style="width: 120px; border-radius: 50px;">
 
-
-
-<a href="https://github.com/erickrian">![Repositório](https://shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
 
 **Maria Eduarda**
 
