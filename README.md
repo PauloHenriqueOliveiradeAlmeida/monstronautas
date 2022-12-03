@@ -129,6 +129,8 @@ https://monstronautas.vercel.app
 
 <img src="https://www.github.com/erickrian.png" alt="Erick" style="width: 120px; border-radius: 50px;">
 
+<a href="https://github.com/erickrian">![Repositório](https://shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
+
 
 **Maria Eduarda**
 
