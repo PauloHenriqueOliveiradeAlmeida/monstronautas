@@ -131,7 +131,6 @@ function Welcome() {
                     <Slide bottom>
                         <CardDev name="Erick Rian"     cargo="Backend Dev"   username="erickrian" />
                         <CardDev name="Maria Eduarda"  cargo="Documentadora" username="Mariaoliveiraa" />
-                        <CardDev name="Maria Rita"     cargo="Documentadora" username="MahSoares"/>
                         <CardDev name="Matheus Frank"  cargo="Frontend Dev"  username="M4theusFrank" />
                         <CardDev name="Paulo Henrique" cargo="Fullstack Dev" username="PauloHenriqueOliveiradeAlmeida" />
                     </Slide>
