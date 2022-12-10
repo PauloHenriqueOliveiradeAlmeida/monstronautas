@@ -119,8 +119,7 @@ Aqui você pode ver uma demonstração ao vivo do projeto:
 https://monstronautas.vercel.app
 
 **Video de Demonstração:**
-
-[![Vídeo de demonstração](https://img.youtube.com/vi/LEQ9sj1c6Cc/0.jpg)](https://www.youtube.com/watch?v=LEQ9sj1c6Cc)
+[![Vídeo de demonstração](https://img.youtube.com/vi/3wBnwY54Hco/0.jpg)](https://www.youtube.com/watch?v=3wBnwY54Hco)
 
 
 ## Desenvolvedores
