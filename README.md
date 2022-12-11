@@ -26,7 +26,6 @@ Visando melhorar o ensino à informática desde as fases iniciais da infância, 
 **Back-end:**
 
 ![NextJS](https://img.shields.io/badge/-NextJS-black?style=for-the-badge&logo=next.js)
-![NextJS](https://img.shields.io/badge/-NodeJS-green?style=for-the-badge&logo=node.js&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/-MariaDB-gray?logo=mariaDB&logoColor=white&style=for-the-badge)
 
 ## Funcionalidades
